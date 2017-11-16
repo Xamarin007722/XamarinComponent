@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{29922BE6-D31E-4741-B20E-B8F0F7E85D59}|Default" GitUserInfo="UsingGIT">
+<Properties StartupConfiguration="{29922BE6-D31E-4741-B20E-B8F0F7E85D59}|Default" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workbench ActiveDocument="XamarinComponent Status">
     <Files>
       <File FileName="CustomComponent/LoginComponent/CustomButton.cs" Line="16" Column="1" />
@@ -10,7 +10,11 @@
       <File FileName="CustomComponent/Views/MyPage.xaml" Line="26" Column="15" />
       <File FileName="CustomComponent/UserControl/CustomLoador.xaml.cs" Line="15" Column="35" />
       <File FileName="CustomComponent/Views/LoginPage.xaml" Line="9" Column="1" />
+<<<<<<< HEAD
       <File FileName="CustomComponent/Views/Loading.cs" Line="10" Column="9" />
+=======
+      <File FileName="CustomComponent/Views/Loading.cs" Line="1" Column="1" />
+>>>>>>> 4aa833dc02899457eb83e2a6268397e0c45b20e0
       <File FileName="XamarinComponent Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
