@@ -1,0 +1,140 @@
+﻿ <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderColor" Value="Lime" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="TextColor" Value="Teal" />
+            </Style>
+            
+            <!-- Builty IN Style 
+            
+            BodyStyle
+            CaptionStyle
+            ListItemDetailTextStyle
+            ListItemTextStyle
+            SubtitleStyle
+            TitleStyle
+
+            <Label Text="I'm a Title" Style="{DynamicResource TitleStyle}"/>-->
+
+
+            <!--  Colors-->
+
+                <!-- System -->
+                <Color x:Key="infoBlueColor">#2f70e1</Color>
+                <Color x:Key="successColor">#53d76a</Color>
+                <Color x:Key="warningColor">#ddaa3b</Color>
+                <Color x:Key="dangerColor">#e5000f</Color>
+                <!-- Whites -->
+                <Color x:Key="white">#ffffff</Color>
+                <Color x:Key="antiqueWhiteColor">#faebd7</Color>
+                <Color x:Key="oldLaceColor">#fdf5e6</Color>
+                <Color x:Key="ivoryColor">#fffff0</Color>
+                <Color x:Key="seashellColor">#fff5ee</Color>
+                <Color x:Key="ghostWhiteColor">#f8f8ff</Color>
+                <Color x:Key="snowColor">#fffafa</Color>
+                <Color x:Key="linenColor">#faf0e6</Color>
+                <!-- Grays -->
+                <Color x:Key="black25PercentColor">#404040</Color>
+                <Color x:Key="black50PercentColor">#808080</Color>
+                <Color x:Key="black75PercentColor">#c0c0c0</Color>
+                <Color x:Key="black">#000000</Color>
+                <Color x:Key="warmGrayColor">#857570</Color>
+                <Color x:Key="coolGrayColor">#767a85</Color>
+                <Color x:Key="charcoalColor">#222222</Color>
+                <!-- Blues -->
+                <Color x:Key="tealColor">#1ca0aa</Color>
+                <Color x:Key="steelBlueColor">#6799aa</Color>
+                <Color x:Key="robinEggColor">#8ddaf7</Color>
+                <Color x:Key="pastelBlueColor">#63a1f7</Color>
+                <Color x:Key="turquoiseColor">#70dbdb</Color>
+                <Color x:Key="skyBlueColor">#00b2ee</Color>
+                <Color x:Key="indigoColor">#0d4f8b</Color>
+                <Color x:Key="denimColor">#4372aa</Color>
+                <Color x:Key="blueberryColor">#5971ad</Color>
+                <Color x:Key="cornflowerColor">#6495ed</Color>
+                <Color x:Key="babyBlueColor">#bedce6</Color>
+                <Color x:Key="midnightBlueColor">#0d1a23</Color>
+                <Color x:Key="fadedBlueColor">#17899b</Color>
+                <Color x:Key="icebergColor">#c8d5db</Color>
+                <Color x:Key="waveColor">#66a9fb</Color>
+                <!-- Greens -->
+                <Color x:Key="emeraldColor">#019875</Color>
+                <Color x:Key="grassColor">#63d64a</Color>
+                <Color x:Key="pastelGreenColor">#7ef27c</Color>
+                <Color x:Key="seafoamColor">#4de28c</Color>
+                <Color x:Key="paleGreenColor">#b0e2ac</Color>
+                <Color x:Key="cactusGreenColor">#636f57</Color>
+                <Color x:Key="chartreuseColor">#458b00</Color>
+                <Color x:Key="hollyGreenColor">#20570e</Color>
+                <Color x:Key="oliveColor">#5b7222</Color>
+                <Color x:Key="oliveDrabColor">#6b8e23</Color>
+                <Color x:Key="moneyGreenColor">#86c67c</Color>
+                <Color x:Key="honeydewColor">#d8ffe7</Color>
+                <Color x:Key="limeColor">#38ed38</Color>
+                <Color x:Key="cardTableColor">#57796b</Color>
+                <!-- Reds -->
+                <Color x:Key="salmonColor">#e9575f</Color>
+                <Color x:Key="brickRedColor">#971b10</Color>
+                <Color x:Key="easterPinkColor">#f1a7a2</Color>
+                <Color x:Key="grapefruitColor">#e41f36</Color>
+                <Color x:Key="pinkColor">#ff5f9a</Color>
+                <Color x:Key="indianRedColor">#cd5c5c</Color>
+                <Color x:Key="strawberryColor">#be2625</Color>
+                <Color x:Key="coralColor">#f08080</Color>
+                <Color x:Key="maroonColor">#50041c</Color>
+                <Color x:Key="watermelonColor">#f2473f</Color>
+                <Color x:Key="tomatoColor">#ff6347</Color>
+                <Color x:Key="pinkLipstickColor">#ff69b4</Color>
+                <Color x:Key="paleRoseColor">#ffe4e1</Color>
+                <Color x:Key="crimsonColor">#bb1224</Color>
+                <!-- Purples -->
+                <Color x:Key="eggplantColor">#690562</Color>
+                <Color x:Key="pastelPurpleColor">#cf64eb</Color>
+                <Color x:Key="palePurpleColor">#e5b4eb</Color>
+                <Color x:Key="coolPurpleColor">#8c5de4</Color>
+                <Color x:Key="violetColor">#bf5fff</Color>
+                <Color x:Key="plumColor">#8b668b</Color>
+                <Color x:Key="lavenderColor">#cc99cc</Color>
+                <Color x:Key="raspberryColor">#872657</Color>
+                <Color x:Key="fuschiaColor">#ff1493</Color>
+                <Color x:Key="grapeColor">#360b58</Color>
+                <Color x:Key="periwinkleColor">#879fed</Color>
+                <Color x:Key="orchidColor">#da70d6</Color>
+                <!-- Yellows -->
+                <Color x:Key="goldenrodColor">#d7aa33</Color>
+                <Color x:Key="yellowGreenColor">#c0f227</Color>
+                <Color x:Key="bananaColor">#e5e33a</Color>
+                <Color x:Key="mustardColor">#cdab2d</Color>
+                <Color x:Key="buttermilkColor">#fef1b5</Color>
+                <Color x:Key="goldColor">#8b7512</Color>
+                <Color x:Key="creamColor">#f0e2bb</Color>
+                <Color x:Key="lightCreamColor">#f0eed7</Color>
+                <Color x:Key="wheatColor">#f0eed7</Color>
+                <Color x:Key="beigeColor">#f5f5dc</Color>
+                <!-- Oranges -->
+                <Color x:Key="peachColor">#f2bb61</Color>
+                <Color x:Key="burntOrangeColor">#b86625</Color>
+                <Color x:Key="pastelOrangeColor">#f8c58f</Color>
+                <Color x:Key="cantaloupeColor">#fa9a4f</Color>
+                <Color x:Key="carrotColor">#ed9121</Color>
+                <Color x:Key="mandarinColor">#f79137</Color>
+                <!-- Browns -->
+                <Color x:Key="chiliPowderColor">#c73f17</Color>
+                <Color x:Key="burntSiennaColor">#8a360f</Color>
+                <Color x:Key="chocolateColor">#5e2605</Color>
+                <Color x:Key="coffeeColor">#8d3c0f</Color>
+                <Color x:Key="cinnamonColor">#7b3f09</Color>
+                <Color x:Key="almondColor">#c48e48</Color>
+                <Color x:Key="eggshellColor">#fce6c9</Color>
+                <Color x:Key="sandColor">#deb697</Color>
+                <Color x:Key="mudColor">#462d1d</Color>
+                <Color x:Key="siennaColor">#a0522d</Color>
+                <Color x:Key="dustColor">#ecd6c5</Color>
+                
+        </ResourceDictionary>
+    </Application.Resources>
