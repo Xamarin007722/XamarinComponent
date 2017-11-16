@@ -7,7 +7,7 @@ namespace XamarinComponent.Views
     public class Loading : ContentPage
     {
         #region Bindable Property
-
+        int i = 0;
         public static readonly BindableProperty IsWaitingProperty = BindableProperty.Create("IsWaiting", typeof(bool), typeof(Loading), false);
         public static readonly BindableProperty ShowLoadingFrameProperty = BindableProperty.Create("ShowLoadingFrame", typeof(bool), typeof(Loading), false);
         public static readonly BindableProperty ShowLoadingMessageProperty = BindableProperty.Create("ShowLoadingMessage", typeof(bool), typeof(Loading), false);

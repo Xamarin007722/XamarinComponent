@@ -1,39 +1,24 @@
-﻿<Properties StartupConfiguration="{29922BE6-D31E-4741-B20E-B8F0F7E85D59}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CustomComponent/UserControl/CustomLoador.xaml.cs">
+﻿<Properties StartupConfiguration="{29922BE6-D31E-4741-B20E-B8F0F7E85D59}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workbench ActiveDocument="XamarinComponent Status">
     <Files>
       <File FileName="CustomComponent/LoginComponent/CustomButton.cs" Line="16" Column="1" />
-      <File FileName="../UtilityClasses/:Users:charry:Projects:XamarinComponent:CustomComponent:UserControl:ActivityIndicator.xaml" Line="6" Column="9" />
       <File FileName="CustomComponent/Resources/ResourceFile.resx" Line="13" Column="26" />
       <File FileName="CustomComponent/Views/MyPage.xaml.cs" Line="28" Column="9" />
       <File FileName="CustomComponent/obj/Debug/netstandard2.0/CustomComponent.UserControl.CustomLoador.xaml.g.cs" Line="1" Column="1" />
-      <File FileName="CustomComponent/UserControl/CustomLogin.xaml" Line="9" Column="35" />
+      <File FileName="CustomComponent/UserControl/CustomLogin.xaml" Line="20" Column="1" />
       <File FileName="CustomComponent/UserControl/CustomLoador.xaml" Line="19" Column="1" />
-      <File FileName="CustomComponent/Views/MyPage.xaml" Line="11" Column="4" />
-      <File FileName="CustomComponent/UserControl/CustomLoador.xaml.cs" Line="9" Column="8" />
+      <File FileName="CustomComponent/Views/MyPage.xaml" Line="26" Column="15" />
+      <File FileName="CustomComponent/UserControl/CustomLoador.xaml.cs" Line="15" Column="35" />
+      <File FileName="CustomComponent/Views/LoginPage.xaml" Line="9" Column="1" />
+      <File FileName="CustomComponent/Views/Loading.cs" Line="1" Column="1" />
+      <File FileName="XamarinComponent Status" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="XamarinComponent" expanded="True">
-            <Node name="CustomComponent" expanded="True">
-              <Node name="UserControl" expanded="True">
-                <Node name="CustomLoador.xaml" expanded="True">
-                  <Node name="CustomLoador.xaml.cs" selected="True" />
-                </Node>
-              </Node>
-              <Node name="Views" expanded="True" />
-            </Node>
-            <Node name="XamarinComponent.iOS" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/charry/Projects/XamarinComponent/iOS/ActivityIndicatorRenderer.cs" relfile="iOS/ActivityIndicatorRenderer.cs" line="13" column="1" />
-      <Breakpoint file="/Users/charry/Projects/XamarinComponent/iOS/ActivityIndicator.cs" relfile="iOS/ActivityIndicator.cs" line="13" column="1" />
+      <Breakpoint file="/Users/charry/XamarinComponent/iOS/ActivityIndicatorRenderer.cs" relfile="iOS/ActivityIndicatorRenderer.cs" line="13" column="1" />
+      <Breakpoint file="/Users/charry/XamarinComponent/iOS/ActivityIndicator.cs" relfile="iOS/ActivityIndicator.cs" line="13" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.XamarinComponent.Droid PreferredExecutionTarget="Android.MytestDevice" />
