@@ -5029,11 +5029,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/charry/Projects/XamarinComponent/CustomComponent/CustomComponent.csproj",
+      "projectUniqueName": "/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/CustomComponent.csproj",
       "projectName": "CustomComponent",
-      "projectPath": "/Users/charry/Projects/XamarinComponent/CustomComponent/CustomComponent.csproj",
+      "projectPath": "/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/CustomComponent.csproj",
       "packagesPath": "/Users/charry/.nuget/packages/",
-      "outputPath": "/Users/charry/Projects/XamarinComponent/CustomComponent/obj",
+      "outputPath": "/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/charry/.config/NuGet/NuGet.Config"
