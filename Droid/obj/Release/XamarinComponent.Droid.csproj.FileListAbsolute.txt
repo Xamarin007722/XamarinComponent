@@ -53,3 +53,10 @@
 /Users/charry/Projects/XamarinComponent/Droid/obj/Release/res/drawable-xxhdpi/icon.png
 /Users/charry/Projects/XamarinComponent/Droid/obj/Release/R.cs.flag
 /Users/charry/Projects/XamarinComponent/Droid/obj/Release/uploadflags.txt
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/Droid/obj/Release/XamarinComponent.Droid.csprojResolveAssemblyReference.cache
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/Droid/obj/Release/XbdMerge/Xamarin.GooglePlayServices.Basement.dll
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/Droid/obj/Release/XbdMerge/Xamarin.GooglePlayServices.Tasks.dll
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/Droid/obj/Release/XbdMerge/Xamarin.GooglePlayServices.Base.dll
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/Droid/obj/Release/XbdMerge/Xamarin.GooglePlayServices.Maps.dll
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/Droid/obj/Release/XamarinComponent.Droid.dll
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/Droid/obj/Release/XamarinComponent.Droid.pdb

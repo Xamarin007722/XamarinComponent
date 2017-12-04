@@ -10,6 +10,9 @@
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+    <PackageReference Include="Xamarin.Forms.GoogleMaps" Version="2.2.1" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="2.4.0.282" />
+    <PackageReference Include="TK.CustomMap" Version="1.4.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LoginComponent\" />
@@ -23,6 +26,7 @@
     <Folder Include="RestClient\" />
     <Folder Include="Utility\" />
     <Folder Include="Views\" />
+    <Folder Include="CustomView\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="XamarinComponentPage.xaml.cs" />

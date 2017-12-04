@@ -9,11 +9,13 @@ namespace XamarinComponent.Droid
 {
 	//You can specify additional application information in this attribute
     [Application]
+    [MetaData("com.google.android.maps.v2.API_KEY", Value = "AIzaSyBONA87fa-2bwrFV3Ag5Tg0t_B5BCdb2pw")]
     public class MainApplication : Application, Application.IActivityLifecycleCallbacks
     {
         public MainApplication(IntPtr handle, JniHandleOwnership transer)
           :base(handle, transer)
         {
+            
         }
 
         public override void OnCreate()
@@ -36,6 +38,7 @@ namespace XamarinComponent.Droid
 
         public void OnActivityDestroyed(Activity activity)
         {
+            
         }
 
         public void OnActivityPaused(Activity activity)

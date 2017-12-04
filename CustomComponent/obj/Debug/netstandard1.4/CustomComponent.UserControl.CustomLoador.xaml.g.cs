@@ -11,8 +11,8 @@
 namespace CustomComponent.UserControl {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/charry/Projects/XamarinComponent/CustomComponent/UserControl/CustomLoador." +
-        "xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/UserCon" +
+        "trol/CustomLoador.xaml")]
     public partial class CustomLoador : global::Xamarin.Forms.Grid {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

@@ -7,6 +7,7 @@ using Plugin.Toasts;
 using Android.OS;
 using Xamarin.Forms;
 using CustomComponent;
+using Xamarin;
 
 namespace XamarinComponent.Droid
 {
@@ -29,6 +30,7 @@ namespace XamarinComponent.Droid
                 Style = NotificationStyle.Snackbar
             });
             //FormsMap.Init(this, savedInstanceState);
+            FormsGoogleMaps.Init(this, bundle);
             LoadApplication(new App());
 
         }

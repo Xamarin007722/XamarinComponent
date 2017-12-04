@@ -18,6 +18,7 @@ namespace XamarinComponent.iOS
             global::Xamarin.Forms.Forms.Init();
 
             DependencyService.Register<ToastNotification>();
+            Xamarin.FormsGoogleMaps.Init("AIzaSyD3YCjiRwumZvVbAKIpoc1Pu2ZSdFJRtPw");
             ToastNotification.Init();
 
             LoadApplication(new App());
