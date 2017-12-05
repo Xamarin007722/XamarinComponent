@@ -11,8 +11,8 @@
 namespace CustomComponent.UserControl {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/charry/Projects/XamarinComponent/CustomComponent/UserControl/CustomLogin.x" +
-        "aml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/UserCon" +
+        "trol/CustomLogin.xaml")]
     public partial class CustomLogin : global::Xamarin.Forms.Grid {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

@@ -164,10 +164,10 @@
       <HintPath>..\packages\Xamarin.GooglePlayServices.Places.42.1021.1\lib\MonoAndroid70\Xamarin.GooglePlayServices.Places.dll</HintPath>
     </Reference>
     <Reference Include="TK.CustomMap.Android">
-      <HintPath>..\packages\TK.CustomMap.1.6.0\lib\MonoAndroid10\TK.CustomMap.Android.dll</HintPath>
+      <HintPath>..\packages\TK.CustomMap.1.6.1\lib\MonoAndroid10\TK.CustomMap.Android.dll</HintPath>
     </Reference>
     <Reference Include="TK.CustomMap">
-      <HintPath>..\packages\TK.CustomMap.1.6.0\lib\MonoAndroid10\TK.CustomMap.dll</HintPath>
+      <HintPath>..\packages\TK.CustomMap.1.6.1\lib\MonoAndroid10\TK.CustomMap.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +200,18 @@
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\mapIcon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_directions_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\powered_by_google_on_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_place_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_directions_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_place_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\powered_by_google_on_white.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_directions_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_place_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\powered_by_google_on_white.png" />
+    <AndroidResource Include="Resources\drawable\ic_directions_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable\ic_place_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\powered_by_google_on_white.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InterfaceImplementation\" />

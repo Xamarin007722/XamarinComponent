@@ -11,7 +11,8 @@
 namespace XamarinComponent.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/charry/Projects/XamarinComponent/CustomComponent/Views/MyPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/Views/M" +
+        "yPage.xaml")]
     public partial class MyPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

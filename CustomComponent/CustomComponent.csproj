@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
 	<AssetTargetFallback>$(AssetTargetFallback);portable-win+net45+wp8+win81+wpa8</AssetTargetFallback>
   </PropertyGroup>
   <ItemGroup>
@@ -9,10 +9,11 @@
     <PackageReference Include="Xamarin.Forms" Version="2.4.0.74863" />
     <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.0.3" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
     <PackageReference Include="Xamarin.Forms.GoogleMaps" Version="2.2.1" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="2.4.0.282" />
-    <PackageReference Include="TK.CustomMap" Version="1.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+    <PackageReference Include="TK.CustomMap" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LoginComponent\" />
@@ -27,6 +28,11 @@
     <Folder Include="Utility\" />
     <Folder Include="Views\" />
     <Folder Include="CustomView\" />
+    <Folder Include="TKCustomMAP\" />
+    <Folder Include="TKCustomMAP\CustomPins\" />
+    <Folder Include="TKCustomMAP\Pages\" />
+    <Folder Include="TKCustomMAP\ViewModels\" />
+    <Folder Include="GoogleAPI\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="XamarinComponentPage.xaml.cs" />

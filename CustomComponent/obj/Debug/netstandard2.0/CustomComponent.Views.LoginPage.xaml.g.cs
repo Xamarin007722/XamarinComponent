@@ -11,7 +11,8 @@
 namespace XamarinComponent.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/charry/Projects/XamarinComponent/CustomComponent/Views/LoginPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/Views/L" +
+        "oginPage.xaml")]
     public partial class LoginPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
