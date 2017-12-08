@@ -169,6 +169,24 @@
     <Reference Include="TK.CustomMap">
       <HintPath>..\packages\TK.CustomMap.1.6.1\lib\MonoAndroid10\TK.CustomMap.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\packages\Plugin.Permissions.2.1.0\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.2.1.0\lib\MonoAndroid10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.4.1.3\lib\MonoAndroid10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.4.1.3\lib\MonoAndroid10\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="ProgressRing.Forms.Plugin.Android">
+      <HintPath>..\packages\Xam.Plugins.Forms.ProgressRing.0.1.2\lib\MonoAndroid10\ProgressRing.Forms.Plugin.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="ProgressRing.Forms.Plugin">
+      <HintPath>..\packages\Xam.Plugins.Forms.ProgressRing.0.1.2\lib\MonoAndroid10\ProgressRing.Forms.Plugin.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomComponent\CustomComponent.csproj">

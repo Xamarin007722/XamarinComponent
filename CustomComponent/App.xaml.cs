@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using CustomComponent.CustomView;
+using CustomComponent.Helpers;
+using CustomComponent.SearchNearBy.Pages;
 using CustomComponent.TKCustomMAP.Pages;
 using CustomComponent.Views;
 using TK.CustomMap;
@@ -16,8 +18,8 @@ namespace CustomComponent
         public App()
         {
             InitializeComponent();
-            TK.CustomMap.Api.GoogleAPI.GmsPlace.Init("AIzaSyCJN3Cd-Sp1a5V5OnkvTR-Gqhx7A3S-b6M");
-            GmsDirection.Init("AIzaSyCJN3Cd-Sp1a5V5OnkvTR-Gqhx7A3S-b6M");
+            //GmsPlace.Init("AIzaSyCJN3Cd-Sp1a5V5OnkvTR-Gqhx7A3S-b6M");
+            GmsDirection.Init(Constant.APIKey);
             //MainPage = new MapView();
             // The root page of your application
             MyCustomMap map = new MyCustomMap();
@@ -68,13 +70,11 @@ namespace CustomComponent
             //        }
             //    }
             //};
-            SearchNearBy();
-            MainPage = new NavigationPage(new SamplePage());
+
+            MainPage = new NavigationPage(new DashBoard()); //new SamplePage()
+
         }
-        async void SearchNearBy()
-        {
-            var result = await TK.CustomMap.Api.GoogleAPI.GmsPlace.Instance.GetNearByPredictions("school");
-        }
+       
 
     }
 }

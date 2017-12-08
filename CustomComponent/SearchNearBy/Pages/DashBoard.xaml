@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="CustomComponent.SearchNearBy.Pages.DashBoard"
+    xmlns:progressring="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin">
+    <ContentPage.Content>
+          <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40*" />
+                <RowDefinition Height="60*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="btnOne" 
+                    BackgroundColor="Black"
+                    TextColor="White" Command="{Binding BtnOneCommand}" Text="Schools">
+                </Button>
+                <Button Grid.Column="1"  x:Name="btnTwo" Command="{Binding BtnTwoCommand}" Text="Restaurant">
+                </Button>
+                <Button Grid.Column="2" x:Name="btnThree" Command="{Binding BtnThreeCommand}" Text="Malls">
+                </Button>
+            </Grid>
+            <StackLayout x:Name="stkMap" Grid.Row="1">
+            </StackLayout>
+
+
+             <ListView x:Name="lstOfResults" 
+                CachingStrategy="RecycleElement" 
+                HasUnevenRows="true"
+                ItemsSource="{Binding NearByReaults}"
+                Grid.Row="2"
+                Margin="5,5">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80*" />
+                                    <ColumnDefinition Width="20*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" > 
+                                    <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="20"/>
+                                    </Grid.RowDefinitions>
+                                     <Label Text="{Binding Name}" 
+                                     VerticalOptions="CenterAndExpand"
+                                    Grid.Row="0"/>
+                                      <Label Text="{Binding Rating}" 
+                                    VerticalOptions="CenterAndExpand"
+                                    Grid.Row="1"/>
+                                      <Label Text="{Binding Address}" 
+                                    VerticalOptions="CenterAndExpand" 
+                                    Grid.Row="2"/>
+                                      <Label Text="{Binding Status}" 
+                                    VerticalOptions="CenterAndExpand"  
+                                    Grid.Row="3"/>
+                                </Grid>
+                                <Image Source="{Binding ImgSource}" Grid.Column="1"></Image>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+         
+    </ContentPage.Content>
+</ContentPage>

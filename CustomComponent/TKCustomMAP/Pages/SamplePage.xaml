@@ -20,5 +20,4 @@
         <ToolbarItem Text="Start Test"
                      Command="{Binding _mapCenter}" />
         </ContentPage.ToolbarItems>
-	
 </ContentPage>

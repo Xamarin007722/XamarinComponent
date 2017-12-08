@@ -20,7 +20,7 @@ namespace XamarinComponent.iOS
             DependencyService.Register<ToastNotification>();
             Xamarin.FormsGoogleMaps.Init("AIzaSyD3YCjiRwumZvVbAKIpoc1Pu2ZSdFJRtPw");
             ToastNotification.Init();
-
+            //ProgressRingRenderer.Init();
             LoadApplication(new App());
 
             if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
