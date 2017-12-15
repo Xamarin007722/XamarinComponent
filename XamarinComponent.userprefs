@@ -1,28 +1,62 @@
 ﻿<Properties StartupConfiguration="{35DE9D59-6E57-42AB-870E-EC8105353BF5}|Default" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workbench ActiveDocument="XamarinComponent.git Status">
     <Files>
-      <File FileName="CustomComponent/App.xaml.cs" Line="72" Column="17" />
-      <File FileName="CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" Line="225" Column="16" />
-      <File FileName="CustomComponent/SearchNearBy/Pages/DashBoard.xaml.cs" Line="24" Column="1" />
-      <File FileName="CustomComponent/SearchNearBy/Pages/DashBoard.xaml" Line="78" Column="15" />
-      <File FileName="CustomComponent/SearchNearBy/Services/GmsPlace.cs" Line="67" Column="1" />
-      <File FileName="iOS/AppDelegate.cs" Line="23" Column="11" />
+      <File FileName="CustomComponent/TKCustomMAP/Pages/AddRoutePage.xaml.cs" Line="45" Column="40" />
+      <File FileName="CustomComponent/SearchNearBy/Pages/DashBoard.xaml" Line="31" Column="11" />
+      <File FileName="CustomComponent/SearchNearBy/Pages/DashBoard.xaml.cs" Line="29" Column="51" />
+      <File FileName="CustomComponent/TKCustomMAP/Pages/SamplePage.xaml.cs" Line="13" Column="1" />
+      <File FileName="CustomComponent/PlacesAutoComplete.cs" Line="97" Column="1" />
+      <File FileName="CustomComponent/App.xaml.cs" Line="76" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="44" Column="43" />
+      <File FileName="CustomComponent/TKCustomMAP/ViewModels/AddRouteViewModel.cs" Line="134" Column="1" />
+      <File FileName="CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" Line="23" Column="17" />
+      <File FileName="CustomComponent/SearchNearBy/Pages/SettingsPage.xaml" Line="38" Column="1" />
+      <File FileName="CustomComponent/SearchNearBy/Pages/SettingsPage.xaml.cs" Line="8" Column="38" />
+      <File FileName="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" Line="405" Column="1" />
+      <File FileName="CustomComponent/Resources/HindiResourceFile.resx" Line="1" Column="1" />
+      <File FileName="CustomComponent/Resources/ResourceFile.resx" Line="17" Column="1" />
       <File FileName="XamarinComponent.git Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="155" column="1" />
-      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="44" column="1" />
-      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="515" column="1" />
-      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="521" column="1" />
-      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="496" column="1" />
-      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="547" column="1" />
       <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/SearchNearBy/Pages/DashBoard.xaml" relfile="CustomComponent/SearchNearBy/Pages/DashBoard.xaml" line="73" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/AddRouteViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/AddRouteViewModel.cs" line="138" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/AddRouteViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/AddRouteViewModel.cs" line="142" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/Pages/AddRoutePage.xaml.cs" relfile="CustomComponent/TKCustomMAP/Pages/AddRoutePage.xaml.cs" line="15" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/Pages/AddRoutePage.xaml.cs" relfile="CustomComponent/TKCustomMAP/Pages/AddRoutePage.xaml.cs" line="49" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/Pages/AddRoutePage.xaml.cs" relfile="CustomComponent/TKCustomMAP/Pages/AddRoutePage.xaml.cs" line="31" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/AddRouteViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/AddRouteViewModel.cs" line="134" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/Pages/SamplePage.xaml.cs" relfile="CustomComponent/TKCustomMAP/Pages/SamplePage.xaml.cs" line="13" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="23" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="443" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="424" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" relfile="CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" line="238" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" relfile="CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" line="250" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" relfile="CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" line="127" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" relfile="CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" line="130" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" relfile="CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" line="131" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="14" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="26" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="39" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="44" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="71" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="97" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="175" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="188" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="207" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="215" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/PlacesAutoComplete.cs" relfile="CustomComponent/PlacesAutoComplete.cs" line="229" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="405" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="96" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="128" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="160" column="1" />
+      <Breakpoint file="/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" relfile="CustomComponent/TKCustomMAP/ViewModels/SampleViewModel.cs" line="161" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.XamarinComponent.Droid PreferredExecutionTarget="Android.Android_8" />
+  <MonoDevelop.Ide.ItemProperties.XamarinComponent.Droid PreferredExecutionTarget="Android.E8AZCY216963" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.XamarinComponent.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.67FADBD2-D596-442E-A955-57981EE3DCAA" automaticSigning="False" />
 </Properties>

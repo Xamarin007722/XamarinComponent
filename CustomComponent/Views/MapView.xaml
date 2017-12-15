@@ -6,19 +6,16 @@
 	<ContentPage.Content>
           <Grid
             HorizontalOptions="Fill"
-            VerticalOptions="Fill">
+            VerticalOptions="Fill" Margin="0,5,0,0">
             <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
                 <RowDefinition Height="4*" />
-                <RowDefinition Height="6*" />
+                <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
             <ScrollView Grid.Row="0"
                         Orientation="Vertical">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -38,7 +35,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Text="MapType"
+                    <Label Text="Select MapType"
                            VerticalOptions="Center"
                            Grid.Row="0"
                            Grid.Column="0" />
@@ -48,7 +45,7 @@
                             Grid.Row="0"
                             Grid.Column="1" />
 
-                    <Label Text="MyLocationEnabled"
+                    <Label Text="Enable My Location"
                            VerticalOptions="Center"
                            Grid.Row="1"
                            Grid.Column="0" />
@@ -58,7 +55,7 @@
                             Grid.Row="1"
                             Grid.Column="1" />
 
-                    <Label Text="UiSettings.MyLocationButtonEnabled"
+                    <Label Text="Enable My Location Button"
                            VerticalOptions="Center"
                            Grid.Row="2"
                            Grid.Column="0" />
@@ -68,7 +65,7 @@
                             Grid.Row="2"
                             Grid.Column="1" />
 
-                    <Label Text="Handle MyLocationButton"
+                    <Label Text="Handle MyLocationButton Clicked"
                            VerticalOptions="Center"
                            Grid.Row="3"
                            Grid.Column="0" />
@@ -78,7 +75,7 @@
                             Grid.Row="3"
                             Grid.Column="1" />
 
-                    <Label Text="UiSettings.ScrollGesturesEnabled"
+                    <Label Text="Enable Map Scroll"
                            VerticalOptions="Center"
                            Grid.Row="4"
                            Grid.Column="0" />
@@ -88,7 +85,7 @@
                             Grid.Row="4"
                             Grid.Column="1" />
 
-                    <Label Text="UiSettings.ZoomGesturesEnabled"
+                    <Label Text="Enable Map Zoom"
                            VerticalOptions="Center"
                            Grid.Row="5"
                            Grid.Column="0" />
@@ -98,7 +95,7 @@
                             Grid.Row="5"
                             Grid.Column="1" />
                     
-                    <Label Text="UiSettings.ZoomControlsEnabled"
+                    <Label Text="Handle Map Zoom Control"
                            VerticalOptions="Center"
                            Grid.Row="6"
                            Grid.Column="0" />
@@ -108,95 +105,49 @@
                             Grid.Row="6"
                             Grid.Column="1" />
 
-                    <Label Text="UiSettings.RotateGesturesEnabled"
+                   
+
+                    <Label Text="Enable Compass"
                            VerticalOptions="Center"
                            Grid.Row="7"
                            Grid.Column="0" />
-                    <Switch x:Name="switchRotateGesturesEnabled"
+                    <Switch x:Name="switchCompassEnabled"
                             VerticalOptions="Center"
                             HorizontalOptions="Start"
                             Grid.Row="7"
                             Grid.Column="1" />
 
-                    <Label Text="UiSettings.CompassEnabled"
+
+                    
+
+                    <Label Text="Show Traffic"
                            VerticalOptions="Center"
                            Grid.Row="8"
-                           Grid.Column="0" />
-                    <Switch x:Name="switchCompassEnabled"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Start"
-                            Grid.Row="8"
-                            Grid.Column="1" />
-
-                    <Label Text="UiSettings.TiltGesturesEnabled"
-                           VerticalOptions="Center"
-                           Grid.Row="9"
-                           Grid.Column="0" />
-                    <Switch x:Name="switchTiltGesturesEnabled"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Start"
-                            Grid.Row="9"
-                            Grid.Column="1" />
-
-                    <Label Text="IsIndoorEnabled"
-                           VerticalOptions="Center"
-                           Grid.Row="10"
-                           Grid.Column="0" />
-                    <Switch x:Name="switchIndoorEnabled"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Start"
-                            Grid.Row="10"
-                            Grid.Column="1" />
-
-                    <Label Text="UiSettings.IndoorLevelPickerEnabled"
-                           VerticalOptions="Center"
-                           Grid.Row="11"
-                           Grid.Column="0" />
-                    <Switch x:Name="switchIndoorLevelPickerEnabled"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Start"
-                            Grid.Row="11"
-                            Grid.Column="1" />
-
-                    <Label Text="IsTrafficEnabled"
-                           VerticalOptions="Center"
-                           Grid.Row="12"
                            Grid.Column="0" />
                     <Switch x:Name="switchIsTrafficEnabled"
                             VerticalOptions="Center"
                             HorizontalOptions="Start"
-                            Grid.Row="12"
+                            Grid.Row="8"
                             Grid.Column="1" />
 
                     <Entry
                         x:Name="entryAddress"
                         VerticalOptions="Center"
                         Text="Hi-tech city Hyderabad"
-                        Grid.Row="13"
+                        Grid.Row="9"
                         Grid.Column="0" />
                     <Button
                         x:Name="buttonGeocode"
                         VerticalOptions="Center"
                         Text="GEOCODE"
-                        Grid.Row="13"
+                        Grid.Row="9"
                         Grid.Column="1" />
-
-                    <Label x:Name="labelStatus"
-                           Grid.Row="14"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2" />
-
-                    <Image x:Name="imageSnapshot"
-                           Margin="5"
-                           Grid.Row="15"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2" />
+                    
                     <Button x:Name="buttonTakeSnapshot"
                             VerticalOptions="Center"
-                            Text="Take Snapshot"
-                            Grid.Row="15"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="2" />
+                            Text="Take Map Snapshot"
+                            Grid.Row="10"
+                            Grid.ColumnSpan="2"/>
 
                 </Grid>
             </ScrollView>
@@ -211,6 +162,17 @@
             <maps:Map Grid.Row="1" x:Name="map"
                       InitialCameraUpdate="-23.68, -46.87, 13, 30, 60"
                       VerticalOptions="FillAndExpand" />
+                  <ScrollView Grid.Row="2" Orientation="Vertical" >
+                 <StackLayout  Orientation="Vertical">
+                      <Button x:Name="buttonSnapshot"
+                            VerticalOptions="Center"
+                            Text="Take Snapshot"
+                            />
+                    <Image x:Name="imageSnapshot"
+                           Margin="5"
+                            />
+                     </StackLayout>
+                         </ScrollView>
         </Grid>
 	</ContentPage.Content>
 </ContentPage>

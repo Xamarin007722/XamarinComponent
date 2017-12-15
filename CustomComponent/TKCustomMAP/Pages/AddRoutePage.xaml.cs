@@ -20,14 +20,17 @@ namespace CustomComponent.TKCustomMAP.Pages
                 Source = "powered_by_google_on_white.png"
             };
 
-            var searchFrom = new PlacesAutoComplete(false) { ApiToUse = PlacesAutoComplete.PlacesApi.Google, Bounds = bounds, Placeholder = "From" };
+            var searchFrom = new PlacesAutoComplete(false)
+            {
+                ApiToUse = PlacesAutoComplete.PlacesApi.Google, Bounds = bounds, Placeholder = "From" 
+            };
             searchFrom.SetBinding(PlacesAutoComplete.PlaceSelectedCommandProperty, "FromSelectedCommand");
             var searchTo = new PlacesAutoComplete(false) { ApiToUse = PlacesAutoComplete.PlacesApi.Google, Bounds = bounds, Placeholder = "To" };
             searchTo.SetBinding(PlacesAutoComplete.PlaceSelectedCommandProperty, "ToSelectedCommand");
 
             if (Device.OS == TargetPlatform.Android)
             {
-                _baseLayout.Children.Add(
+                   _baseLayout.Children.Add(
                     googleImage,
                     Constraint.Constant(10),
                     Constraint.RelativeToParent(l => l.Height - 30));

@@ -15,7 +15,7 @@ namespace CustomComponent
             p => p.Bounds,
             default(MapSpan));
 
-        // TODO: SUMMARIES
+       
         public enum PlacesApi
         {
             Google,
@@ -95,9 +95,6 @@ namespace CustomComponent
         }
         void Init()
         {
-
-            OsmNominatim.Instance.CountryCodes.Add("de");
-
             _autoCompleteListView = new ListView
             {
                 IsVisible = false,
@@ -184,25 +181,13 @@ namespace CustomComponent
 
                 IEnumerable<IPlaceResult> result = null;
 
-                if (ApiToUse == PlacesApi.Google)
-                {
                     var apiResult = await GmsPlace.Instance.GetPredictions(SearchText);
                     if (apiResult != null)
                         result = apiResult.Predictions;
-                }
-                else if (ApiToUse == PlacesApi.Native)
-                {
-                    result = await TKNativePlacesApi.Instance.GetPredictions(SearchText, Bounds);
-                }
-                else
-                {
-                    result = await OsmNominatim.Instance.GetPredictions(SearchText);
-                }
-
+                
                 if (result != null && result.Any())
                 {
                     _predictions = result;
-
                     _autoCompleteListView.HeightRequest = result.Count() * 40;
                     _autoCompleteListView.IsVisible = true;
                     _autoCompleteListView.ItemsSource = _predictions;
@@ -215,7 +200,7 @@ namespace CustomComponent
             }
             catch (Exception x)
             {
-                // TODO
+                
             }
         }
         void ItemSelected(object sender, SelectedItemChangedEventArgs e)

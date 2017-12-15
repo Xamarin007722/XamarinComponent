@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UtilityClasses.Resources {
+namespace CustomComponent.Resources {
     using System;
     using System.Reflection;
     
@@ -30,7 +30,7 @@ namespace UtilityClasses.Resources {
         internal static System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.Equals(null, resourceMan)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("UtilityClasses.Resources.ResourceFile", typeof(ResourceFile).GetTypeInfo().Assembly);
+                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("CustomComponent.Resources.ResourceFile", typeof(ResourceFile).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

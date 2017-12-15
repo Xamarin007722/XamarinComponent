@@ -18,7 +18,7 @@ namespace CustomComponent
         public App()
         {
             InitializeComponent();
-            //GmsPlace.Init("AIzaSyCJN3Cd-Sp1a5V5OnkvTR-Gqhx7A3S-b6M");
+            GmsPlace.Init(Constant.APIKey);
             GmsDirection.Init(Constant.APIKey);
             //MainPage = new MapView();
             // The root page of your application
@@ -71,7 +71,7 @@ namespace CustomComponent
             //    }
             //};
 
-            MainPage = new NavigationPage(new DashBoard()); //new SamplePage()
+            MainPage = new NavigationPage(new SamplePage()); //new SamplePage()
 
         }
        

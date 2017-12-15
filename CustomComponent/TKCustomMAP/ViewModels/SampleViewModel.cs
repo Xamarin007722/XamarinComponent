@@ -13,7 +13,9 @@ using CustomComponent.TKCustomMAP.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using TK.CustomMap;
+using CustomComponent.SearchNearBy.Pages;
 using CustomComponent.TKCustomMAP.CustomPins;
+using CustomComponent.Views;
 
 namespace CustomComponent.TKCustomMAP.ViewModels
 {
@@ -30,249 +32,8 @@ namespace CustomComponent.TKCustomMAP.ViewModels
         ObservableCollection<TKCircle> _circles;
         ObservableCollection<TKPolyline> _lines;
         ObservableCollection<TKPolygon> _polygons;
-        Random _random = new Random(1984);
+       
 
-        public TKTileUrlOptions TilesUrlOptions
-        {
-            get
-            {
-                return _tileUrlOptions;
-                //return new TKTileUrlOptions(
-                //    "http://a.basemaps.cartocdn.com/dark_all/{2}/{0}/{1}.png", 256, 256, 0, 18);
-                //return new TKTileUrlOptions(
-                //    "http://a.tile.openstreetmap.org/{2}/{0}/{1}.png", 256, 256, 0, 18);
-            }
-            set
-            {
-                if (_tileUrlOptions != value)
-                {
-                    _tileUrlOptions = value;
-                    OnPropertyChanged("TilesUrlOptions");
-                }
-            }
-        }
-
-        public IRendererFunctions MapFunctions { get; set; }
-
-        public Command RunSimulationCommand
-        {
-            get
-            {
-                return new Command(async _ =>
-                {
-                    if (!(await Application.Current.MainPage.DisplayAlert("Start Test?", "Start simulation test?", "Yes", "No")))
-                        return;
-
-                    Pins.Clear();
-
-                    #region Clustering Test
-
-                    for (int i = 0; i < 20; i++)
-                    {
-                        var newPin = new TKCustomMapPin
-                        {
-                            Position = GetDummyPosition(),
-                            Title = "Cluster Test"
-                        };
-                        Pins.Add(newPin);
-                    }
-                    MapFunctions.FitMapRegionToPositions(Pins.Select(i => i.Position), false);
-                    IsClusteringEnabled = true;
-                    MapRegion = MapSpan.FromCenterAndRadius(MapRegion.Center, Distance.FromKilometers(100));
-                    await Task.Delay(2000);
-                    IsClusteringEnabled = false;
-                    await Task.Delay(2000);
-                    IsClusteringEnabled = true;
-                    await Task.Delay(2000);
-                    IsClusteringEnabled = false;
-                    await Task.Delay(2000);
-
-                    Pins.Clear();
-
-                    #endregion Clustering Test
-
-                    #region PinTest
-
-                    var pin = new TKCustomMapPin
-                    {
-                        Position = new Position(40.718577, -74.083754),
-                        Title = "Simulation Test",
-                        ShowCallout = true
-                    };
-
-                    _pins.Add(pin);
-                    await Task.Delay(1000);
-
-                    SelectedPin = pin;
-                    await Task.Delay(1000);
-
-                    SelectedPin = null;
-                    await Task.Delay(1000);
-
-                    SelectedPin = pin;
-                    await Task.Delay(1000);
-
-                    SelectedPin = null;
-                    await Task.Delay(1000);
-
-                    pin.DefaultPinColor = Color.Purple;
-                    await Task.Delay(1000);
-                    pin.DefaultPinColor = Color.Green;
-                    await Task.Delay(1000);
-
-                    pin.Image = Device.OnPlatform("Icon-Small.png", "icon.png", "icon.png");
-                    await Task.Delay(1000);
-                    pin.Image = null;
-                    await Task.Delay(1000);
-
-                    _pins.Remove(pin);
-                    await Task.Delay(1000);
-                    _pins.Add(pin);
-                    await Task.Delay(1000);
-                    pin.Position = new Position(40.718281, -74.085179);
-                    await Task.Delay(1000);
-                    pin.Position = new Position(40.717476, -74.080915);
-                    await Task.Delay(1000);
-                    pin.Position = new Position(40.718577, -74.083754);
-                    await Task.Delay(1000);
-                    _pins.Clear();
-
-                    #endregion PinTest
-
-                    #region Circles Test
-
-                    var circle = new TKCircle
-                    {
-                        Center = new Position(40.659743, -74.049422),
-                        Color = Color.Red,
-                        Radius = 1000
-                    };
-                    _circles.Add(circle);
-                    await Task.Delay(1000);
-
-                    circle.Color = Color.Green;
-                    await Task.Delay(1000);
-                    circle.Color = Color.Purple;
-                    await Task.Delay(1000);
-
-                    circle.Radius = 2000;
-                    await Task.Delay(1000);
-                    circle.Radius = 3000;
-                    await Task.Delay(1000);
-
-                    circle.Center = new Position(40.718577, -74.083754);
-                    await Task.Delay(1000);
-
-                    _circles.Remove(circle);
-                    await Task.Delay(1000);
-                    _circles.Add(circle);
-                    await Task.Delay(1000);
-                    _circles.Clear();
-
-                    #endregion Circles Test
-
-                    #region Lines Test
-
-                    Lines = new ObservableCollection<TKPolyline>();
-
-                    var line = new TKPolyline
-                    {
-                        Color = Color.Pink,
-                        LineWidth = 2f,
-                        LineCoordinates = new List<Position>(new Position[]
-                        {
-                            new Position(40.647241, -74.081007),
-                            new Position(40.702873, -74.016162)
-                        })
-                    };
-
-                    _lines.Add(line);
-                    await Task.Delay(1000);
-
-                    line.Color = Color.Red;
-                    await Task.Delay(1000);
-                    line.Color = Color.Green;
-                    await Task.Delay(1000);
-
-                    line.LineCoordinates = new List<Position>(new Position[]
-                    {
-                        new Position(40.647241, -74.081007),
-                        new Position(40.702873, -74.016162),
-                        new Position(40.690602, -74.017309)
-                    });
-                    await Task.Delay(1000);
-                    _lines.Remove(line);
-                    await Task.Delay(1000);
-                    _lines.Add(line);
-                    await Task.Delay(1000);
-                    _lines.Clear();
-
-                    #endregion Lines Test
-
-                    #region Polygon Test
-
-                    Polygons = new ObservableCollection<TKPolygon>();
-
-                    var poly = new TKPolygon
-                    {
-                        StrokeColor = Color.Green,
-                        StrokeWidth = 2f,
-                        Color = Color.Red,
-                        Coordinates = new List<Position>(new Position[]
-                        {
-                            new Position(40.716901, -74.055969),
-                            new Position(40.699878, -73.986296),
-                            new Position(40.636811, -74.076240)
-                        })
-                    };
-
-                    _polygons.Add(poly);
-                    await Task.Delay(1000);
-
-                    poly.StrokeColor = Color.Purple;
-                    await Task.Delay(1000);
-                    poly.StrokeWidth = 5f;
-                    await Task.Delay(1000);
-                    poly.StrokeWidth = 0;
-                    await Task.Delay(1000);
-                    poly.StrokeWidth = 2f;
-                    await Task.Delay(1000);
-
-                    poly.Color = Color.Yellow;
-                    await Task.Delay(1000);
-
-                    _polygons.Remove(poly);
-                    await Task.Delay(1000);
-                    _polygons.Add(poly);
-                    await Task.Delay(1000);
-                    _polygons.Clear();
-
-                    #endregion Polygon Test
-
-                    #region Tiles Test
-
-                    TilesUrlOptions = new TKTileUrlOptions(
-                        "http://a.basemaps.cartocdn.com/dark_all/{2}/{0}/{1}.png", 256, 256, 0, 18);
-                    await Task.Delay(5000);
-                    TilesUrlOptions = null;
-                    await Task.Delay(5000);
-                    TilesUrlOptions = new TKTileUrlOptions(
-                        "http://a.tile.openstreetmap.org/{2}/{0}/{1}.png", 256, 256, 0, 18);
-
-                    #endregion Tiles Test
-                });
-            }
-        }
-
-        public bool IsClusteringEnabled
-        {
-            get => _isClusteringEnabled;
-            set
-            {
-                _isClusteringEnabled = value;
-                OnPropertyChanged(nameof(IsClusteringEnabled));
-            }
-        }
 
         public Command ShowListCommand
         {
@@ -425,6 +186,31 @@ namespace CustomComponent.TKCustomMAP.ViewModels
         }
 
         /// <summary>
+        /// Gets the go to near by command.
+        /// </summary>
+        /// <value>The go to near by command.</value>
+        public Command GoToNearByCommand
+        {
+            get
+            {
+                return new Command(async()=> await Application.Current.MainPage.Navigation.PushAsync(new SettingsPage()));
+            }
+        }
+        /// <summary>
+        /// Gets the go to pins command.
+        /// </summary>
+        /// <value>The go to pins command.</value>
+        public Command GoToPinsCommand
+        {
+            get
+            {
+                return new Command(async () => await Application.Current.MainPage.Navigation.PushAsync(new MapView()));
+            }
+        }
+
+
+
+        /// <summary>
         /// Map Long Press bound to the <see cref="TKCustomMap"/>
         /// </summary>
         public Command<Position> MapLongPressCommand
@@ -550,31 +336,6 @@ namespace CustomComponent.TKCustomMAP.ViewModels
             }
         }
 
-        /// <summary>
-        /// Drag End bound to the <see cref="TKCustomMap"/>
-        /// </summary>
-        public Command<TKCustomMapPin> DragEndCommand
-        {
-            get
-            {
-                return new Command<TKCustomMapPin>(pin =>
-                {
-                    var routePin = pin as RoutePin;
-
-                    if (routePin != null)
-                    {
-                        if (routePin.IsSource)
-                        {
-                            routePin.Route.Source = pin.Position;
-                        }
-                        else
-                        {
-                            routePin.Route.Destination = pin.Position;
-                        }
-                    }
-                });
-            }
-        }
 
         /// <summary>
         /// Route clicked bound to the <see cref="TKCustomMap"/>
@@ -689,15 +450,6 @@ namespace CustomComponent.TKCustomMAP.ViewModels
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        Position GetDummyPosition()
-        {
-            return new Position(Random(17.4474, 78.3762), Random(0.148271, -0.3514683));
-        }
-        double Random(double min, double max)
-        {
-            return _random.NextDouble() * (max - min) + min;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -1,4 +1,5 @@
 ﻿using System;
+using Acr.UserDialogs;
 using MvvmHelpers;
 using Xamarin.Forms;
 
@@ -33,14 +34,14 @@ namespace CustomComponent.SearchNearBy.Models
             get => srchbtnfour;
             set => SetProperty(ref srchbtnfour, value);
         }
-        string lat;
-        public string Lat
+        double lat;
+        public double Lat
         {
             get => lat;
             set => SetProperty(ref lat, value);
         }
-        string longi;
-        public string Long
+        double longi;
+        public double Long
         {
             get => longi;
             set => SetProperty(ref longi, value);
@@ -76,5 +77,8 @@ namespace CustomComponent.SearchNearBy.Models
             get => imgsource;
             set => SetProperty(ref imgsource, value);
         }
+
+
+
     }
 }

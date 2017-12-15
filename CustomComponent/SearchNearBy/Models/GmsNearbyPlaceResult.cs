@@ -43,11 +43,18 @@ namespace CustomComponent.SearchNearBy.Models
         public string Rating { get; set; }
         [JsonProperty("photos")]
         public IList<Photo> photos { get; set; }
+        [JsonProperty("opening_hours")]
+        public OpeningHours opening_hours { get; set; }
     }
     public class Photo
     {
         [JsonProperty("photo_reference")]
         public string PhotoReference { get; set; }
 
+    }
+    public class OpeningHours
+    {
+        [JsonProperty("open_now")]
+        public bool open_now { get; set; }
     }
 }

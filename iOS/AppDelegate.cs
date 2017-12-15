@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using CustomComponent;
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using Plugin.Toasts;
+using TK.CustomMap.iOSUnified;
 using UIKit;
 using UserNotifications;
 using Xamarin.Forms;
@@ -20,6 +22,8 @@ namespace XamarinComponent.iOS
             DependencyService.Register<ToastNotification>();
             Xamarin.FormsGoogleMaps.Init("AIzaSyD3YCjiRwumZvVbAKIpoc1Pu2ZSdFJRtPw");
             ToastNotification.Init();
+            TKCustomMapRenderer.InitMapRenderer();
+            ImageCircleRenderer.Init();
             //ProgressRingRenderer.Init();
             LoadApplication(new App());
 

@@ -4,6 +4,7 @@ using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 using CustomComponent.SearchNearBy.ViewModels;
 using ProgressRingControl.Forms.Plugin;
+using Acr.UserDialogs;
 
 namespace CustomComponent.SearchNearBy.Pages
 {
@@ -19,11 +20,15 @@ namespace CustomComponent.SearchNearBy.Pages
             mapView.SetBinding(TKCustomMap.PinSelectedCommandProperty, "PinSelectedCommand");
             mapView.SetBinding(TKCustomMap.MapRegionProperty, "MapRegion");
             mapView.SetBinding(TKCustomMap.CustomPinsProperty, "CustomPins");
+            mapView.SetBinding(TKCustomMap.RouteCalculationFinishedCommandProperty, "RouteCalculationFinishedCommand");
             mapView.IsShowingUser = true;
             stkMap.Children.Add(mapView);
             this.BindingContext = new DashBoardViewModel();
         }
 
-       
+       protected override bool OnBackButtonPressed()
+        {
+            return base.OnBackButtonPressed();  
+        }
     }
 }

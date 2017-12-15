@@ -7,16 +7,12 @@ namespace CustomComponent.TKCustomMAP.Pages
 {
     public partial class PinListPage : ContentPage
     {
-
         public event EventHandler<PinSelectedEventArgs> PinSelected;
-
         readonly IEnumerable<TKCustomMapPin> _pins;
-
 
         public PinListPage(IEnumerable<TKCustomMapPin> pins)
         {
             InitializeComponent();
-
             _pins = pins;
             BindingContext = _pins;
 
@@ -32,8 +28,8 @@ namespace CustomComponent.TKCustomMAP.Pages
             PinSelected?.Invoke(this, new PinSelectedEventArgs(pin));
         }
     }
-    public class PinSelectedEventArgs : EventArgs
-    {
+     public class PinSelectedEventArgs : EventArgs
+     {
         public TKCustomMapPin Pin { get; set; }
 
         public PinSelectedEventArgs(TKCustomMapPin pin)

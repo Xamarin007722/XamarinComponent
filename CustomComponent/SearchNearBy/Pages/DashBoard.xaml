@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="CustomComponent.SearchNearBy.Pages.DashBoard"
-    xmlns:progressring="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin">
+      xmlns:lvbehavior="clr-namespace:CustomComponent.Behaviors;assembly:CustomComponent"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="CustomComponent.SearchNearBy.Pages.DashBoard" 
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" xmlns:progressring="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="styleforlabel" TargetType="Label">
+                <Setter Property="TextColor">Red</Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-          <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40" />
                 <RowDefinition Height="40*" />
@@ -13,66 +21,66 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Grid Grid.Row="0">
+            <Grid Grid.Row="0" Padding="5,2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" x:Name="btnOne" 
-                    BackgroundColor="Black"
-                    TextColor="White" Command="{Binding BtnOneCommand}" Text="Schools">
+                <Button Grid.Column="0" x:Name="btnOne" TextColor="White" FontSize="10" Command="{Binding BtnOneCommand}" Text="Schools">
                 </Button>
-                <Button Grid.Column="1"  x:Name="btnTwo" Command="{Binding BtnTwoCommand}" Text="Restaurant">
+                <Button Grid.Column="1" FontSize="10" TextColor="White" x:Name="btnTwo" Command="{Binding BtnTwoCommand}" Text="Restaurant">
                 </Button>
-                <Button Grid.Column="2" x:Name="btnThree" Command="{Binding BtnThreeCommand}" Text="Malls">
+                <Button Grid.Column="2" FontSize="10" TextColor="White" x:Name="btnThree" Command="{Binding BtnThreeCommand}" Text="Malls">
+                </Button>
+                <Button Grid.Column="3" FontSize="10" TextColor="White" x:Name="btnFour" Command="{Binding BtnFourCommand}" Text="IT Companies">
                 </Button>
             </Grid>
             <StackLayout x:Name="stkMap" Grid.Row="1">
             </StackLayout>
-
-
-             <ListView x:Name="lstOfResults" 
+            <ListView x:Name="lstOfResults" 
                 CachingStrategy="RecycleElement" 
-                HasUnevenRows="true"
-                ItemsSource="{Binding NearByReaults}"
-                Grid.Row="2"
-                Margin="5,5">
+                HasUnevenRows="true" ItemsSource="{Binding NearByReaults}" 
+                Grid.Row="2" SeparatorVisibility="None"
+                SelectedItem="{Binding ItemSelected}" BackgroundColor="#C23838">
+                <ListView.Behaviors>
+                <lvbehavior:SelectedItemToCommandBehaviour Command="{Binding ItemSelectedCommand}" />
+                </ListView.Behaviors>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80*" />
-                                    <ColumnDefinition Width="20*" />
-                                </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="0" > 
-                                    <Grid.RowDefinitions>
-                                    <RowDefinition Height="20"/>
-                                    <RowDefinition Height="20"/>
-                                    <RowDefinition Height="50"/>
-                                    <RowDefinition Height="20"/>
-                                    </Grid.RowDefinitions>
-                                     <Label Text="{Binding Name}" 
-                                     VerticalOptions="CenterAndExpand"
-                                    Grid.Row="0"/>
-                                      <Label Text="{Binding Rating}" 
-                                    VerticalOptions="CenterAndExpand"
-                                    Grid.Row="1"/>
-                                      <Label Text="{Binding Address}" 
-                                    VerticalOptions="CenterAndExpand" 
-                                    Grid.Row="2"/>
-                                      <Label Text="{Binding Status}" 
-                                    VerticalOptions="CenterAndExpand"  
-                                    Grid.Row="3"/>
+                            <StackLayout>
+                                <Grid HeightRequest="5" BackgroundColor="#FFFFFF">
                                 </Grid>
-                                <Image Source="{Binding ImgSource}" Grid.Column="1"></Image>
-                            </Grid>
+                                <Grid Padding="5,0" BackgroundColor="#C23838">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80*" />
+                                        <ColumnDefinition Width="20*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="18" />
+                                            <RowDefinition Height="18" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="18" />
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Name}" TextColor="#FFFFFF" FontAttributes="Bold" FontSize="11" VerticalOptions="CenterAndExpand" Grid.Row="0" />
+                                        <Label Text="{Binding Rating}" TextColor="#F8CD7A" FontAttributes="Bold" FontSize="12" VerticalOptions="CenterAndExpand" Grid.Row="1" />
+                                        <Label Text="{Binding Address}" LineBreakMode="WordWrap" TextColor="#FFFFFF" FontSize="12" VerticalOptions="CenterAndExpand" Grid.Row="2" />
+                                        <Label Text="{Binding Status}" FontAttributes="Bold" TextColor="#FFFFFF" FontSize="11" VerticalOptions="CenterAndExpand" Grid.Row="3" />
+                                    </Grid>
+<!--                                    <Image Source="{Binding ImgSource}" Grid.Column="1"></Image>-->
+                                    <controls:CircleImage Grid.Column="1" Source="{Binding ImgSource}"
+                                        BorderThickness="3" BorderColor="White" WidthRequest="75" HeightRequest="75" Aspect="AspectFill">
+                                       
+                                    </controls:CircleImage>
+                                </Grid>
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
-         
     </ContentPage.Content>
 </ContentPage>

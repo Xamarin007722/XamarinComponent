@@ -5,7 +5,11 @@
     xmlns:tk="clr-namespace:TK.CustomMap;assembly=TK.CustomMap">
 	<RelativeLayout x:Name="_baseLayout" VerticalOptions="FillAndExpand" />
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add Route"
+       
+        <ToolbarItem Text="Clear"
+                     Command="{Binding ClearMapCommand}" >
+        </ToolbarItem>
+         <ToolbarItem Text="Add Route"
                      Command="{Binding AddRouteCommand}">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource"
@@ -13,11 +17,23 @@
                             iOS="ic_directions.png" />
             </ToolbarItem.Icon>
         </ToolbarItem>
-        <ToolbarItem Text="Clear"
-                     Command="{Binding ClearMapCommand}" />
-        <ToolbarItem Text="List"
-                     Command="{Binding ShowListCommand}" />
-        <ToolbarItem Text="Start Test"
-                     Command="{Binding _mapCenter}" />
+           <ToolbarItem Text="SearchNearBy"
+                         Command="{Binding GoToNearByCommand}" >
+                         <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            Android="iconsearch.png"
+                            iOS="iconsearch.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+         <ToolbarItem Text="Pins"
+                         Command="{Binding GoToPinsCommand}" >
+                         <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            Android="mappinicon.png"
+                            iOS="mappinicon.png" />
+            </ToolbarItem.Icon>
+            </ToolbarItem>
+       <!-- <ToolbarItem Text="Start Test"
+                     Command="{Binding _mapCenter}" />-->
         </ContentPage.ToolbarItems>
 </ContentPage>

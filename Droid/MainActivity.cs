@@ -9,6 +9,8 @@ using Xamarin.Forms;
 using CustomComponent;
 using TK.CustomMap.Droid;
 using Xamarin;
+using Acr.UserDialogs;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace XamarinComponent.Droid
 {
@@ -21,6 +23,7 @@ namespace XamarinComponent.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             base.OnCreate(bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            ImageCircleRenderer.Init();
             //var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
             //x = typeof(Xamarin.Forms.Themes.LightThemeResources);
             //x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
@@ -31,11 +34,16 @@ namespace XamarinComponent.Droid
                 Style = NotificationStyle.Snackbar
             });
             //FormsMap.Init(this, savedInstanceState);
-            //FormsGoogleMaps.Init(this, bundle);
+            FormsGoogleMaps.Init(this, bundle);
             //TKGoogleMaps.Init(this, bundle);
-             
+            UserDialogs.Init(this);
             LoadApplication(new App());
 
+        }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();   
         }
     }
 }

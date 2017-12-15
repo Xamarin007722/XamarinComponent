@@ -48,12 +48,10 @@ namespace XamarinComponent.iOS
             else if (e.PropertyName == ActivityIndicator.IsRunningProperty.PropertyName)
                 UpdateIsRunning();
         }
-
         void UpdateColor()
         {
-            Control.Color = Element.Color == Color.Default ? null : Color.Green.ToUIColor();
+            Control.Color = Element.Color == Xamarin.Forms.Color.Default ? null : Xamarin.Forms.Color.Green.ToUIColor();
         }
-
         void UpdateIsRunning()
         {
             if (Element.IsRunning)
@@ -61,7 +59,6 @@ namespace XamarinComponent.iOS
             else
                 Control.StopAnimating();
         }
-
         internal void PreserveState()
         {
             if (Control != null && !Control.IsAnimating && Element != null && Element.IsRunning)

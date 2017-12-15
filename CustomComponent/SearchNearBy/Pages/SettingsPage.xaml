@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="CustomComponent.SearchNearBy.Pages.SettingsPage" Title="Settings Page">
+	<ContentPage.Content>
+       <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+       <Grid.RowDefinitions>
+       <RowDefinition Height="4*"/>
+       <RowDefinition Height="5*" />
+       </Grid.RowDefinitions>
+             <Grid Grid.Row="0" Padding="5,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                 <RowDefinition Height ="40"/>
+                 <RowDefinition Height ="40"/>
+                 <RowDefinition Height ="40"/>
+                 <RowDefinition Height ="40"/>
+                 <RowDefinition Height ="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" VerticalOptions="CenterAndExpand" Grid.Column="0" FontSize="12" Text="Text for first button"></Label>
+            <Label Grid.Row="1" VerticalOptions="CenterAndExpand" Grid.Column="0" FontSize="12" Text="Text for second button"></Label>
+            <Label Grid.Row="2" VerticalOptions="CenterAndExpand" Grid.Column="0" FontSize="12" Text="Text for third button"></Label>
+            <Label Grid.Row="3" VerticalOptions="CenterAndExpand" Grid.Column="0" FontSize="12" Text="Text for fourth button"></Label>
+
+            <Entry Grid.Row="0" VerticalOptions="CenterAndExpand"  Grid.Column="1" FontSize="12" Placeholder="Enter your choice"> </Entry>
+            <Entry Grid.Row="1" VerticalOptions="CenterAndExpand" Grid.Column="1" FontSize="12" Placeholder="Enter your choice"> </Entry>
+            <Entry Grid.Row="2" VerticalOptions="CenterAndExpand" Grid.Column="1" FontSize="12" Placeholder="Enter your choice"> </Entry>
+            <Entry Grid.Row="3" VerticalOptions="CenterAndExpand" Grid.Column="1" FontSize="12" Placeholder="Enter your choice"> </Entry>
+
+            <Button Text="Save" FontSize="12" TextColor="White" Grid.ColumnSpan="2" Grid.Row="4"></Button>
+        </Grid>
+        </Grid>
+	</ContentPage.Content>
+</ContentPage>

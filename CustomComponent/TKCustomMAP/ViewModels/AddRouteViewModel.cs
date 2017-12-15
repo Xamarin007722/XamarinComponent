@@ -31,9 +31,17 @@ namespace CustomComponent.TKCustomMAP.ViewModels
                 {
                     if (Device.OS == TargetPlatform.iOS)
                     {
-                        TKNativeiOSPlaceResult placeResult = (TKNativeiOSPlaceResult)p;
+                       // TKNativeiOSPlaceResult placeResult = (TKNativeiOSPlaceResult)p;
                         //_fromPlace = placeResult;
                         //_from = placeResult.Details.Coordinate;
+
+                        var gmsResult = p as GmsPlacePrediction;
+                        if (gmsResult != null)
+                        {
+                            _fromPlace = gmsResult;
+                            var details = await GmsPlace.Instance.GetDetails(gmsResult.PlaceId);
+                            _from = new Position(details.Item.Geometry.Location.Latitude, details.Item.Geometry.Location.Longitude);
+                        }
                     }
                     else
                     {
@@ -59,6 +67,13 @@ namespace CustomComponent.TKCustomMAP.ViewModels
                         //TKNativeiOSPlaceResult placeResult = (TKNativeiOSPlaceResult)p;
                         //_toPlace = placeResult;
                         //_to = placeResult.Details.Coordinate;
+                        var gmsResult = p as GmsPlacePrediction;
+                        if (gmsResult != null)
+                        {
+                            _toPlace = gmsResult;
+                            var details = await GmsPlace.Instance.GetDetails(gmsResult.PlaceId);
+                            _to = new Position(details.Item.Geometry.Location.Latitude, details.Item.Geometry.Location.Longitude);
+                        }
                     }
                     else
                     {
