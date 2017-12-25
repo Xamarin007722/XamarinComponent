@@ -127,7 +127,7 @@ namespace CustomComponent
             {
                 _entry = new Entry
                 {
-                    Placeholder = "Sarch for address"
+                    Placeholder = "Search for address"
                 };
                 _entry.TextChanged += SearchTextChanged;
 
@@ -180,7 +180,6 @@ namespace CustomComponent
                 }
 
                 IEnumerable<IPlaceResult> result = null;
-
                     var apiResult = await GmsPlace.Instance.GetPredictions(SearchText);
                     if (apiResult != null)
                         result = apiResult.Predictions;

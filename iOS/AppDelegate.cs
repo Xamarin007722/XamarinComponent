@@ -24,6 +24,7 @@ namespace XamarinComponent.iOS
             ToastNotification.Init();
             TKCustomMapRenderer.InitMapRenderer();
             ImageCircleRenderer.Init();
+            FAB.iOS.FloatingActionButtonRenderer.InitControl();
             //ProgressRingRenderer.Init();
             LoadApplication(new App());
 

@@ -16,6 +16,15 @@
           "lib/netstandard1.1/Acr.UserDialogs.dll": {}
         }
       },
+      "FAB.Forms/2.2.0-pre1": {
+        "type": "package",
+        "compile": {
+          "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/FAB.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/FAB.Forms.dll": {}
+        }
+      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -185,6 +194,20 @@
         "runtime": {
           "lib/netstandard1.0/Plugin.Permissions.Abstractions.dll": {},
           "lib/netstandard1.0/Plugin.Permissions.dll": {}
+        }
+      },
+      "Rg.Plugins.Popup/1.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.0.49"
+        },
+        "compile": {
+          "lib/portable-win+net45+wp8+win8+wpa81/Rg.Plugins.Popup.Platform.dll": {},
+          "lib/portable-win+net45+wp8+win8+wpa81/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/portable-win+net45+wp8+win8+wpa81/Rg.Plugins.Popup.Platform.dll": {},
+          "lib/portable-win+net45+wp8+win8+wpa81/Rg.Plugins.Popup.dll": {}
         }
       },
       "Splat/2.0.0": {
@@ -899,6 +922,20 @@
           "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
         }
       },
+      "Xam.Plugins.Messaging/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Plugin.Messaging.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.Messaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Messaging.Abstractions.dll": {},
+          "lib/netstandard1.0/Plugin.Messaging.dll": {}
+        }
+      },
       "Xam.Plugins.Settings/3.1.1": {
         "type": "package",
         "dependencies": {
@@ -991,6 +1028,31 @@
         "lib/uap10.0/Acr.UserDialogs/ProgressContentDialog.xaml",
         "lib/uap10.0/Acr.UserDialogs/Properties/Acr.UserDialogs.rd.xml",
         "lib/uap10.0/Acr.UserDialogs/TimePickerControl.xaml"
+      ]
+    },
+    "FAB.Forms/2.2.0-pre1": {
+      "sha512": "cKr6QefQZ7eHwAtCFCvnucYjeUa6H0rk037jDFOQB5PMoMYtOkmKa/m0P209iehiTgs8Qm4WEWFGq0/2SeYOpw==",
+      "type": "package",
+      "path": "fab.forms/2.2.0-pre1",
+      "files": [
+        "fab.forms.2.2.0-pre1.nupkg.sha512",
+        "fab.forms.nuspec",
+        "lib/MonoAndroid10/FAB.Droid.dll",
+        "lib/MonoAndroid10/FAB.Droid.xml",
+        "lib/MonoAndroid10/FAB.Forms.dll",
+        "lib/MonoAndroid10/FAB.Forms.xml",
+        "lib/MonoTouch10/FAB.Forms.dll",
+        "lib/MonoTouch10/FAB.Forms.xml",
+        "lib/MonoTouch10/FAB.iOS.dll",
+        "lib/MonoTouch10/FAB.iOS.xml",
+        "lib/Xamarin.iOS10/FAB.Forms.dll",
+        "lib/Xamarin.iOS10/FAB.Forms.xml",
+        "lib/Xamarin.iOS10/FAB.iOS.dll",
+        "lib/Xamarin.iOS10/FAB.iOS.xml",
+        "lib/portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10/FAB.Forms.dll",
+        "lib/portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10/FAB.Forms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/FAB.Forms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/FAB.Forms.xml"
       ]
     },
     "Microsoft.Bcl/1.1.10": {
@@ -1558,6 +1620,32 @@
         "plugin.permissions.2.1.0.nupkg.sha512",
         "plugin.permissions.nuspec",
         "readme.txt"
+      ]
+    },
+    "Rg.Plugins.Popup/1.0.4": {
+      "sha512": "KTpeQmUT3RgTkCIwtsdGRuNh6gLlrZ78f2kW6gwo9UmTBR2RIHMx/Tc6FZEplFQBVApJ8e7S7EnM/SuZ+9jMCg==",
+      "type": "package",
+      "path": "rg.plugins.popup/1.0.4",
+      "files": [
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll",
+        "lib/MonoAndroid/Rg.Plugins.Popup.Platform.dll",
+        "lib/MonoAndroid/Rg.Plugins.Popup.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.IOS.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.Platform.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.Platform.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.dll",
+        "lib/portable-win+net45+wp8+win8+wpa81/Rg.Plugins.Popup.Platform.dll",
+        "lib/portable-win+net45+wp8+win8+wpa81/Rg.Plugins.Popup.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.Platform.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.UWP.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.dll",
+        "lib/wpa81/Rg.Plugins.Popup.Platform.dll",
+        "lib/wpa81/Rg.Plugins.Popup.WinPhone.dll",
+        "lib/wpa81/Rg.Plugins.Popup.dll",
+        "rg.plugins.popup.1.0.4.nupkg.sha512",
+        "rg.plugins.popup.nuspec"
       ]
     },
     "Splat/2.0.0": {
@@ -4083,6 +4171,40 @@
         "xam.plugins.forms.progressring.nuspec"
       ]
     },
+    "Xam.Plugins.Messaging/5.0.0": {
+      "sha512": "pQF7logne6usvcn143eWf/8UUuH1aj8gUtGihIk2ATmQ/qkxFzC39hS5lnahcBVgtgjt1MylMZousEmtU1BicQ==",
+      "type": "package",
+      "path": "xam.plugins.messaging/5.0.0",
+      "files": [
+        "lib/MonoAndroid10/Plugin.Messaging.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.Messaging.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.Messaging.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.Messaging.dll",
+        "lib/MonoAndroid10/Plugin.Messaging.pdb",
+        "lib/MonoAndroid10/Plugin.Messaging.xml",
+        "lib/UAP10/Plugin.Messaging.Abstractions.dll",
+        "lib/UAP10/Plugin.Messaging.Abstractions.pdb",
+        "lib/UAP10/Plugin.Messaging.Abstractions.xml",
+        "lib/UAP10/Plugin.Messaging.dll",
+        "lib/UAP10/Plugin.Messaging.pdb",
+        "lib/UAP10/Plugin.Messaging.pri",
+        "lib/UAP10/Plugin.Messaging.xml",
+        "lib/Xamarin.iOS10/Plugin.Messaging.Abstractions.dll",
+        "lib/Xamarin.iOS10/Plugin.Messaging.Abstractions.pdb",
+        "lib/Xamarin.iOS10/Plugin.Messaging.Abstractions.xml",
+        "lib/Xamarin.iOS10/Plugin.Messaging.dll",
+        "lib/Xamarin.iOS10/Plugin.Messaging.xml",
+        "lib/netstandard1.0/Plugin.Messaging.Abstractions.dll",
+        "lib/netstandard1.0/Plugin.Messaging.Abstractions.pdb",
+        "lib/netstandard1.0/Plugin.Messaging.Abstractions.xml",
+        "lib/netstandard1.0/Plugin.Messaging.deps.json",
+        "lib/netstandard1.0/Plugin.Messaging.dll",
+        "lib/netstandard1.0/Plugin.Messaging.pdb",
+        "lib/netstandard1.0/Plugin.Messaging.xml",
+        "xam.plugins.messaging.5.0.0.nupkg.sha512",
+        "xam.plugins.messaging.nuspec"
+      ]
+    },
     "Xam.Plugins.Settings/3.1.1": {
       "sha512": "EQEYQJ64ZLqui5GWkLMavgqitHxwUHZHryTzUD1021UBuz1XwDSjPL45W0K4pPXjz9oKbg7YpRXKPR1luPr/5Q==",
       "type": "package",
@@ -4420,11 +4542,13 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Acr.UserDialogs >= 6.5.1",
+      "FAB.Forms >= 2.2.0-pre1",
       "Microsoft.NETCore.Portable.Compatibility >= 1.0.1",
       "Microsoft.Net.Http >= 2.2.29",
       "NETStandard.Library >= 2.0.0",
       "Newtonsoft.Json >= 10.0.3",
       "Plugin.Permissions >= 2.1.0",
+      "Rg.Plugins.Popup >= 1.0.4",
       "TK.CustomMap >= 1.6.1",
       "Toasts.Forms.Plugin >= 3.2.1",
       "Xam.Plugin.Connectivity >= 3.0.3",
@@ -4432,6 +4556,7 @@
       "Xam.Plugin.Screenshot >= 1.0.11",
       "Xam.Plugins.Forms.ImageCircle >= 1.8.1",
       "Xam.Plugins.Forms.ProgressRing >= 0.1.2",
+      "Xam.Plugins.Messaging >= 5.0.0",
       "Xam.Plugins.Settings >= 3.1.1",
       "Xamarin.Forms >= 2.4.0.91020",
       "Xamarin.Forms.GoogleMaps >= 2.2.1",
@@ -4536,10 +4661,6 @@
             "target": "Package",
             "version": "6.5.1"
           },
-          "Xamarin.Forms": {
-            "target": "Package",
-            "version": "2.4.0.91020"
-          },
           "Xam.Plugin.Screenshot": {
             "target": "Package",
             "version": "1.0.11"
@@ -4551,6 +4672,22 @@
           "sqlite-net-pcl": {
             "target": "Package",
             "version": "1.4.118"
+          },
+          "Rg.Plugins.Popup": {
+            "target": "Package",
+            "version": "1.0.4"
+          },
+          "Xam.Plugins.Messaging": {
+            "target": "Package",
+            "version": "5.0.0"
+          },
+          "FAB.Forms": {
+            "target": "Package",
+            "version": "2.2.0-pre1"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "2.4.0.91020"
           }
         },
         "imports": [
@@ -4567,6 +4704,16 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+      "message": "Package 'FAB.Forms 2.2.0-pre1' was restored using '.NETPortable,Version=v0.0,Profile=win+net45+wp8+win81+wpa8, .NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FAB.Forms",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
       "message": "Package 'Microsoft.Bcl 1.1.10' was restored using '.NETPortable,Version=v0.0,Profile=win+net45+wp8+win81+wpa8, .NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Bcl",
       "targetGraphs": [
@@ -4579,6 +4726,16 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.Net.Http 2.2.29' was restored using '.NETPortable,Version=v0.0,Profile=win+net45+wp8+win81+wpa8, .NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Net.Http",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Rg.Plugins.Popup 1.0.4' was restored using '.NETPortable,Version=v0.0,Profile=win+net45+wp8+win81+wpa8, .NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Rg.Plugins.Popup",
       "targetGraphs": [
         ".NETStandard,Version=v2.0"
       ]

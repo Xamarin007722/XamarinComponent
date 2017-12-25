@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="CustomComponent.SearchNearBy.Pages.ImageLargeView" x:Name="ThePopupPage">
+  <pages:PopupPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="EntryStyle" TargetType="Entry">
+        <Setter Property="PlaceholderColor" Value="#9cdaf1"/>
+        <Setter Property="TextColor" Value="#7dbbe6"/>
+      </Style>
+    </ResourceDictionary>
+  </pages:PopupPage.Resources>
+  <pages:PopupPage.Animation>
+    <animations:ScaleAnimation
+      PositionIn="Right"
+      PositionOut="Center"
+      ScaleIn="1"
+      ScaleOut="0.7"
+      DurationIn="700"
+      EasingIn="SpringOut"
+      EasingOut="SpringIn"/>
+  </pages:PopupPage.Animation>
+      
+      <StackLayout HeightRequest="360" WidthRequest="300"  BackgroundColor="White"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand">
+       <Image 
+              HorizontalOptions="CenterAndExpand"
+              VerticalOptions="CenterAndExpand"
+              Aspect="AspectFill"
+              x:Name="largeImage"
+              HeightRequest="300"
+              WidthRequest="300"
+              >
+             <!-- <Image.Source>
+                <OnPlatform
+                  x:TypeArguments="ImageSource"
+                  Android="icon.png"
+                  iOS="icon.png"
+                  />
+              </Image.Source>-->
+            </Image>
+        <Grid BackgroundColor="White" 
+            HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand" >
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="2.5*"/>
+            </Grid.ColumnDefinitions>
+       
+            <Image 
+            Grid.Column="0" 
+            HeightRequest="50" 
+            WidthRequest="50"  
+            Source="WriteEmail.png">
+             <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference ThePopupPage},Path=BindingContext.WriteEmailCommand}" CommandParameter="{Binding .}">
+                        
+                    </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+            </Image>
+
+            <Image  HeightRequest="40" WidthRequest="40" Grid.Column="1"  Source="MakeCall.png">
+            <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference ThePopupPage},Path=BindingContext.MakeCallCommand}" CommandParameter="{Binding .}">
+                        
+                    </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+
+            </Image>
+
+
+            
+            <Image  HeightRequest="40" WidthRequest="40" Grid.Column="2"  Source="DoChat.png">
+             <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference ThePopupPage},Path=BindingContext.DoChatCommand}" CommandParameter="{Binding .}">
+                        
+                    </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+            </Image>
+            <Image  HeightRequest="40" WidthRequest="40" Grid.Column="3"  Source="GoToWebsite.png">
+             <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={x:Reference ThePopupPage},Path=BindingContext.GoToWebsiteCommand}" CommandParameter="{Binding .}">
+                        
+                    </TapGestureRecognizer>
+            </Image.GestureRecognizers>
+            </Image>
+            
+        </Grid>
+      </StackLayout>      
+        
+</pages:PopupPage>

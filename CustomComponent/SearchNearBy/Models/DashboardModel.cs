@@ -2,11 +2,13 @@
 using Acr.UserDialogs;
 using MvvmHelpers;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace CustomComponent.SearchNearBy.Models
 {
     public class DashboardModel:BaseViewModel
     {
+        
         string srchbtnone;
         public string SrchBtnOne
         {
@@ -78,6 +80,12 @@ namespace CustomComponent.SearchNearBy.Models
             set => SetProperty(ref imgsource, value);
         }
 
+        bool isbusy=false;
+        public new bool IsBusy
+        {
+            get => isbusy;
+            set => SetProperty(ref isbusy, value);
+        }
 
 
     }

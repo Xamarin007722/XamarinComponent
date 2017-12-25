@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CustomComponent.CustomView;
 using CustomComponent.Helpers;
 using CustomComponent.SearchNearBy.Pages;
+using CustomComponent.SearchNearBy.Services;
 using CustomComponent.TKCustomMAP.Pages;
 using CustomComponent.Views;
 using TK.CustomMap;
@@ -15,10 +16,12 @@ namespace CustomComponent
 {
     public partial class App : Application
     {
+        static SettingsDatabase _settingDatabase;
+        static SettingsTokenController _settingTokenController;
         public App()
         {
             InitializeComponent();
-            GmsPlace.Init(Constant.APIKey);
+            TK.CustomMap.Api.Google.GmsPlace.Init(Constant.APIKey);
             GmsDirection.Init(Constant.APIKey);
             //MainPage = new MapView();
             // The root page of your application
@@ -38,6 +41,7 @@ namespace CustomComponent
             });
 
           
+
             Entry searchPosition = new Entry()
             {
                 Placeholder ="Search Places",
@@ -71,10 +75,33 @@ namespace CustomComponent
             //    }
             //};
 
+
             MainPage = new NavigationPage(new SamplePage()); //new SamplePage()
 
         }
        
+        public static SettingsDatabase SettingDatabase
+        {
+            get
+            {
+                if (_settingDatabase==null)
+                {
+                    _settingDatabase = new SettingsDatabase();
+                }
+                return _settingDatabase;
+            }
+        }
 
+        public static SettingsTokenController SettingTokenController
+        {
+            get
+            {
+                if (_settingTokenController == null)
+                {
+                    _settingTokenController = new SettingsTokenController();
+                }
+                return _settingTokenController;
+            }
+        }
     }
 }

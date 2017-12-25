@@ -91,7 +91,7 @@ namespace CustomComponent.TKCustomMAP.ViewModels
 
         public Command AddRouteCommand
         {
-            get
+           get
             {
                 return new Command(() =>
                 {
@@ -128,7 +128,6 @@ namespace CustomComponent.TKCustomMAP.ViewModels
                     });
 
                     Routes.Add(route);
-
                     Application.Current.MainPage.Navigation.PopAsync();
                 });
             }

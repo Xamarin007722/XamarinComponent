@@ -17,10 +17,13 @@
     <PackageReference Include="Plugin.Permissions" Version="2.1.0" />
     <PackageReference Include="Xam.Plugins.Forms.ProgressRing" Version="0.1.2" />
     <PackageReference Include="Acr.UserDialogs" Version="6.5.1" />
-    <PackageReference Include="Xamarin.Forms" Version="2.4.0.91020" />
     <PackageReference Include="Xam.Plugin.Screenshot" Version="1.0.11" />
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="1.8.1" />
     <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.0.4" />
+    <PackageReference Include="Xam.Plugins.Messaging" Version="5.0.0" />
+    <PackageReference Include="FAB.Forms" Version="2.2.0-pre1" />
+    <PackageReference Include="Xamarin.Forms" Version="2.4.0.91020" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LoginComponent\" />
@@ -47,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="XamarinComponentPage.xaml.cs" />
+    <Compile Remove="SearchNearBy\Models\SettingsTokenModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\HindiResourceFile.Designer.cs">

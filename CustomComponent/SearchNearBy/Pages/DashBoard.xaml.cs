@@ -5,6 +5,9 @@ using Xamarin.Forms.Xaml;
 using CustomComponent.SearchNearBy.ViewModels;
 using ProgressRingControl.Forms.Plugin;
 using Acr.UserDialogs;
+using System;
+using Rg.Plugins.Popup.Extensions;
+using CustomComponent.SearchNearBy.Models;
 
 namespace CustomComponent.SearchNearBy.Pages
 {
@@ -12,6 +15,7 @@ namespace CustomComponent.SearchNearBy.Pages
     public partial class DashBoard : ContentPage
     {
         TKCustomMap mapView = null;
+
         public DashBoard()
         {
             InitializeComponent();
@@ -20,11 +24,26 @@ namespace CustomComponent.SearchNearBy.Pages
             mapView.SetBinding(TKCustomMap.PinSelectedCommandProperty, "PinSelectedCommand");
             mapView.SetBinding(TKCustomMap.MapRegionProperty, "MapRegion");
             mapView.SetBinding(TKCustomMap.CustomPinsProperty, "CustomPins");
+            //mapView.SetBinding(TKCustomMap.CustomPinsProperty, "Pins");
+            mapView.SetBinding(TKCustomMap.RoutesProperty, "Routes");
+            //mapView.SetBinding(TKCustomMap.PolylinesProperty,"Polylines");
+            //mapView.SetBinding(TKCustomMap.PolylinesProperty, "Lines");
+            //mapView.SetBinding(TKCustomMap.CustomPinsProperty, "Pins");
             mapView.SetBinding(TKCustomMap.RouteCalculationFinishedCommandProperty, "RouteCalculationFinishedCommand");
             mapView.IsShowingUser = true;
             stkMap.Children.Add(mapView);
-            this.BindingContext = new DashBoardViewModel();
+            var DbVM=new DashBoardViewModel();
+            //lstOfResults.IsPullToRefreshEnabled = true;
+            //lstOfResults.SetBinding(ListView.IsRefreshingProperty,nameof(DbVM.IsBusy));
+            //lstOfResults.RefreshCommand = DbVM.ListRefreshCommand;
+            this.BindingContext = DbVM;
         }
+
+        //async void  OnTapGestureRecognizerTapped(object sender, EventArgs args)
+        //{
+        //    var model= sender as DashboardModel;
+        //    await Navigation.PushPopupAsync(new ImageLargeView(model.ImgSource));
+        //}
 
        protected override bool OnBackButtonPressed()
         {

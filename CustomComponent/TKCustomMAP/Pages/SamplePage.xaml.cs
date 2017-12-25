@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using CustomComponent.TKCustomMAP.ViewModels;
+using FAB.Forms;
 using TK.CustomMap;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -16,6 +16,7 @@ namespace CustomComponent.TKCustomMAP.Pages
             CreateView();
             BindingContext = new SampleViewModel();
         }
+
         async void CreateView()
         {
             var autoComplete = new PlacesAutoComplete { ApiToUse = PlacesAutoComplete.PlacesApi.Google };
@@ -35,13 +36,18 @@ namespace CustomComponent.TKCustomMAP.Pages
             mapView.SetBinding(TKCustomMap.PolylinesProperty, "Lines");
             mapView.SetBinding(TKCustomMap.PolygonsProperty, "Polygons");
             mapView.SetBinding(TKCustomMap.MapRegionProperty, "MapRegion");
-            mapView.SetBinding(TKCustomMap.RouteClickedCommandProperty, "RouteClickedCommand");
             mapView.SetBinding(TKCustomMap.RouteCalculationFinishedCommandProperty, "RouteCalculationFinishedCommand");
             mapView.IsRegionChangeAnimated = true;
 
             autoComplete.SetBinding(PlacesAutoComplete.BoundsProperty, "MapRegion");
 
             //Content = mapView;
+
+            //FloatingActionButton normalFab = new FloatingActionButton();
+            //normalFab.Source = "plus.png";
+            //normalFab.Size = FabSize.Normal;
+            //normalFab.RippleColor = Color.Gray;
+
             _baseLayout.Children.Add(
                 mapView,
                 Constraint.RelativeToView(autoComplete, (r, v) => v.X),
@@ -53,6 +59,19 @@ namespace CustomComponent.TKCustomMAP.Pages
                 autoComplete,
                 Constraint.Constant(0),
                 Constraint.Constant(0));
+
+            //_baseLayout.Children.Add(
+            //    normalFab,
+            //    xConstraint: Constraint.RelativeToParent((parent) => { return (parent.Width - normalFab.Width) - 16; }),
+            //    yConstraint: Constraint.RelativeToParent((parent) => { return (parent.Height - normalFab.Height) - 16; })
+            //);
+            //normalFab.SizeChanged += (sender, args) => { _baseLayout.ForceLayout(); };
         }
+
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
