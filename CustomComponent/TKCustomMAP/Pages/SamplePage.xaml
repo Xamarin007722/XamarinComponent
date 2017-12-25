@@ -2,12 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="CustomComponent.TKCustomMAP.Pages.SamplePage"
+    xmlns:fab="clr-namespace:FAB.Forms;assembly=FAB.Forms"
     xmlns:tk="clr-namespace:TK.CustomMap;assembly=TK.CustomMap">
 	<RelativeLayout x:Name="_baseLayout" VerticalOptions="FillAndExpand" />
     <ContentPage.ToolbarItems>
        
         <ToolbarItem Text="Clear"
                      Command="{Binding ClearMapCommand}" >
+        </ToolbarItem>
+         <ToolbarItem Text="Setting"
+                     Command="{Binding SettingCommand}" >
         </ToolbarItem>
          <ToolbarItem Text="Add Route"
                      Command="{Binding AddRouteCommand}">
@@ -36,4 +40,17 @@
        <!-- <ToolbarItem Text="Start Test"
                      Command="{Binding _mapCenter}" />-->
         </ContentPage.ToolbarItems>
+       <!-- <ContentPage.Content>
+
+        <fab:FloatingActionButton  
+                    x:Name="fabBtn"  
+                    Source="icon.png"  
+                    Size="Normal"  
+                    Clicked="Handle_Clicked"  
+                    NormalColor="Green"  
+                    RippleColor="Red"  
+                    HasShadow="True"  
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-75}"  
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-75}" />
+        </ContentPage.Content>-->
 </ContentPage>

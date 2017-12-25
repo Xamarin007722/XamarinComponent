@@ -17,20 +17,26 @@
                  <RowDefinition Height ="40"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" VerticalOptions="CenterAndExpand" Grid.Column="0" FontSize="12" Text="Text for first button"></Label>
             <Label Grid.Row="1" VerticalOptions="CenterAndExpand" Grid.Column="0" FontSize="12" Text="Text for second button"></Label>
             <Label Grid.Row="2" VerticalOptions="CenterAndExpand" Grid.Column="0" FontSize="12" Text="Text for third button"></Label>
             <Label Grid.Row="3" VerticalOptions="CenterAndExpand" Grid.Column="0" FontSize="12" Text="Text for fourth button"></Label>
 
-            <Entry Grid.Row="0" VerticalOptions="CenterAndExpand"  Grid.Column="1" FontSize="12" Placeholder="Enter your choice"> </Entry>
-            <Entry Grid.Row="1" VerticalOptions="CenterAndExpand" Grid.Column="1" FontSize="12" Placeholder="Enter your choice"> </Entry>
-            <Entry Grid.Row="2" VerticalOptions="CenterAndExpand" Grid.Column="1" FontSize="12" Placeholder="Enter your choice"> </Entry>
-            <Entry Grid.Row="3" VerticalOptions="CenterAndExpand" Grid.Column="1" FontSize="12" Placeholder="Enter your choice"> </Entry>
+            <Entry Grid.Row="0" Text="{Binding EntryFirstText}" VerticalOptions="CenterAndExpand"  Grid.Column="1" FontSize="12" Placeholder="Enter button text"> </Entry>
+            <Entry Grid.Row="1" Text="{Binding EntrySecondText}" VerticalOptions="CenterAndExpand" Grid.Column="1" FontSize="12" Placeholder="Enter button text"> </Entry>
+            <Entry Grid.Row="2" Text="{Binding EntryThirdText}" VerticalOptions="CenterAndExpand" Grid.Column="1" FontSize="12" Placeholder="Enter button text"> </Entry>
+            <Entry Grid.Row="3" Text="{Binding EntryFourthText}" VerticalOptions="CenterAndExpand" Grid.Column="1" FontSize="12" Placeholder="Enter button text"> </Entry>
 
-            <Button Text="Save" FontSize="12" TextColor="White" Grid.ColumnSpan="2" Grid.Row="4"></Button>
+            <Entry Grid.Row="0" Text="{Binding EntryFirstSearchText}" VerticalOptions="CenterAndExpand"  Grid.Column="2" FontSize="12" Placeholder="Enter search text"> </Entry>
+            <Entry Grid.Row="1" Text="{Binding EntrySecondSearchText}" VerticalOptions="CenterAndExpand" Grid.Column="2" FontSize="12" Placeholder="Enter search text"> </Entry>
+            <Entry Grid.Row="2" Text="{Binding EntryThirdSearchText}" VerticalOptions="CenterAndExpand" Grid.Column="2" FontSize="12" Placeholder="Enter search text"> </Entry>
+            <Entry Grid.Row="3" Text="{Binding EntryFourthSearchText}" VerticalOptions="CenterAndExpand" Grid.Column="2" FontSize="12" Placeholder="Enter search text"> </Entry>
+    
+            <Button Text="Save" FontSize="12" Command="{Binding SaveCommand}" TextColor="White" Grid.ColumnSpan="3" Grid.Row="4"></Button>
         </Grid>
         </Grid>
 	</ContentPage.Content>

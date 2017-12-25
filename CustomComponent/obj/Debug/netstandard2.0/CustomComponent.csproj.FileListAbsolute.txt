@@ -20,12 +20,15 @@
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/bin/Debug/netstandard2.0/CustomComponent.dll
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/bin/Debug/netstandard2.0/CustomComponent.pdb
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.Resources.HindiResourceFile.resources
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.Resources.ResourceFile.resources
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.csproj.GenerateResource.Cache
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.csproj.CoreCompileInputs.cache
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.App.xaml.g.cs
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.SearchNearBy.Pages.DashBoard.xaml.g.cs
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.SearchNearBy.Pages.DemoPage.xaml.g.cs
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.SearchNearBy.Pages.ImageLargeView.xaml.g.cs
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.SearchNearBy.Pages.SettingsPage.xaml.g.cs
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.TKCustomMAP.Pages.AddRoutePage.xaml.g.cs
-/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.TKCustomMAP.Pages.HTMLInstructionsPage.xaml.g.cs
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.TKCustomMAP.Pages.PinListPage.xaml.g.cs
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.TKCustomMAP.Pages.SamplePage.xaml.g.cs
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.UserControl.CustomLoador.xaml.g.cs
@@ -38,5 +41,3 @@
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.AssemblyInfo.cs
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.dll
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.pdb
-/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.csprojResolveAssemblyReference.cache
-/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.SearchNearBy.Pages.SettingsPage.xaml.g.cs

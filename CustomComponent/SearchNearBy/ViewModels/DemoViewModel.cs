@@ -1,27 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Threading.Tasks;
+using CustomComponent.TKCustomMAP.CustomPins;
+using MvvmHelpers;
+using TK.CustomMap;
 using TK.CustomMap.Api;
 using TK.CustomMap.Api.Google;
 using TK.CustomMap.Api.OSM;
-using TK.CustomMap.Interfaces;
 using TK.CustomMap.Overlays;
-using CustomComponent.TKCustomMAP.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
-using TK.CustomMap;
-using CustomComponent.SearchNearBy.Pages;
-using CustomComponent.TKCustomMAP.CustomPins;
-using CustomComponent.Views;
 
-namespace CustomComponent.TKCustomMAP.ViewModels
+namespace CustomComponent.SearchNearBy.ViewModels
 {
-    public class SampleViewModel : INotifyPropertyChanged
+    public class DemoViewModel:BaseViewModel
     {
-        TKTileUrlOptions _tileUrlOptions;
+      
 
         MapSpan _mapRegion = MapSpan.FromCenterAndRadius(new Position(17.4474, 78.3762), Distance.FromKilometers(2));
         Position _mapCenter;
@@ -32,30 +27,6 @@ namespace CustomComponent.TKCustomMAP.ViewModels
         ObservableCollection<TKCircle> _circles;
         ObservableCollection<TKPolyline> _lines;
         ObservableCollection<TKPolygon> _polygons;
-       
-
-
-        public Command ShowListCommand
-        {
-            get
-            {
-                return new Command(async () =>
-                {
-                    if (_pins == null || !_pins.Any())
-                    {
-                        Application.Current.MainPage.DisplayAlert("Nothing there!", "No pins to show!", "OK");
-                        return;
-                    }
-                    var listPage = new PinListPage(Pins);
-                    listPage.PinSelected += async (o, e) =>
-                    {
-                        SelectedPin = e.Pin;
-                        await Application.Current.MainPage.Navigation.PopAsync();
-                    };
-                    await Application.Current.MainPage.Navigation.PushAsync(listPage);
-                });
-            }
-        }
 
         /// <summary>
         /// Map region bound to <see cref="TKCustomMap"/>
@@ -185,28 +156,6 @@ namespace CustomComponent.TKCustomMAP.ViewModels
             }
         }
 
-        /// <summary>
-        /// Gets the go to near by command.
-        /// </summary>
-        /// <value>The go to near by command.</value>
-        public Command GoToNearByCommand
-        {
-            get
-            {
-                return new Command(async()=> await Application.Current.MainPage.Navigation.PushAsync(new DashBoard()));
-            }
-        }
-        /// <summary>
-        /// Gets the go to pins command.
-        /// </summary>
-        /// <value>The go to pins command.</value>
-        public Command GoToPinsCommand
-        {
-            get
-            {
-                return new Command(async () => await Application.Current.MainPage.Navigation.PushAsync(new MapView()));
-            }
-        }
 
 
 
@@ -228,14 +177,16 @@ namespace CustomComponent.TKCustomMAP.ViewModels
 
                     if (action == "Add Pin")
                     {
-                        var pin = new TKCustomMapPin
-                        {
-                            Position = position,
-                            Title = string.Format("Pin {0}, {1}", position.Latitude, position.Longitude),
-                            ShowCallout = true,
-                            IsDraggable = true
-                        };
-                        _pins.Add(pin);
+                        //var pin = new TKCustomMapPin
+                        //{
+                        //    Position = position,
+                        //    Title = string.Format("Pin {0}, {1}", position.Latitude, position.Longitude),
+                        //    ShowCallout = true,
+                        //    IsDraggable = true
+                        //};
+                        //_pins.Add(pin);
+
+                        Getroute();
                     }
                     else if (action == "Add Circle")
                     {
@@ -297,27 +248,7 @@ namespace CustomComponent.TKCustomMAP.ViewModels
                         MapRegion = MapSpan.FromCenterAndRadius(new Position(MapCenter.Latitude, MapCenter.Longitude), Distance.FromKilometers(1));
                         return;
                     }
-                    //var osmResult = p as OsmNominatimResult;
-                    //if (osmResult != null)
-                    //{
-                    //    MapCenter = new Position(osmResult.Latitude, osmResult.Longitude);
-                    //    return;
-                    //}
 
-                    //if (Device.OS == TargetPlatform.Android)
-                    //{
-                    //    var prediction = (TKNativeAndroidPlaceResult)p;
-
-                    //    var details = await TKNativePlacesApi.Instance.GetDetails(prediction.PlaceId);
-
-                    //    MapCenter = details.Coordinate;
-                    //}
-                    //else if (Device.OS == TargetPlatform.iOS)
-                    //{
-                    //    var prediction = (TKNativeiOSPlaceResult)p;
-
-                    //    MapCenter = prediction.Details.Coordinate;
-                    //}
                 });
             }
         }
@@ -373,31 +304,7 @@ namespace CustomComponent.TKCustomMAP.ViewModels
             }
         }
 
-        /// <summary>
-        /// Navigate to a new page to get route source/destination
-        /// </summary>
-        public Command AddRouteCommand
-        {
-            get            {
-                return new Command(() =>
-                {
-                    if (Routes == null) Routes = new ObservableCollection<TKRoute>();
 
-                    var addRoutePage = new AddRoutePage(Routes, Pins, MapRegion);
-                    Application.Current.MainPage.Navigation.PushAsync(addRoutePage);
-                });
-            }
-        }
-        public Command SettingCommand
-        {
-            get
-            {
-                return new Command(() =>
-                {
-                    Application.Current.MainPage.Navigation.PushAsync(new SettingsPage());
-                });
-            }
-        }
 
 
 
@@ -416,30 +323,85 @@ namespace CustomComponent.TKCustomMAP.ViewModels
             }
         }
 
-        public Func<string, IEnumerable<TKCustomMapPin>, TKCustomMapPin> GetClusteredPin => (group, clusteredPins) =>
+        public  DemoViewModel()
         {
-            return null;
-            //return new TKCustomMapPin
+          
+        }
+
+        public async void Getroute()
+        {
+            GmsDirectionResult Routeresult= await  GmsDirection.
+            Instance.CalculateRoute(new Position(17.4474, 78.3762),
+            new Position(17.4375, 78.4483),GmsDirectionTravelMode.Driving,null);
+
+            var routes= Routeresult.Routes.FirstOrDefault();
+           
+            Lines = new ObservableCollection<TKPolyline>();
+            Pins = new ObservableCollection<TKCustomMapPin>();
+            IEnumerable<Position> pos= routes.Polyline.Positions;
+
+            var line = new TKPolyline
+            {
+                Color = Color.Green,
+                LineWidth = 10f,
+                LineCoordinates = pos.ToList()
+            };
+
+            Pins.Add(new TKCustomMapPin
+            {
+                //Route = route,
+                //IsSource = true,
+                IsDraggable = true,
+                Position = new Position(17.4474, 78.3762),
+                ShowCallout = true,
+                DefaultPinColor = Color.Green
+            });
+            Pins.Add(new TKCustomMapPin
+            {
+                //Route = route,
+                //IsSource = false,
+                IsDraggable = true,
+                Position = new Position(17.4375, 78.4483),
+                ShowCallout = true,
+                DefaultPinColor = Color.Red
+            });
+           
+            Lines.Add(line);
+
+
+
+            //var route = new TKRoute
             //{
-            //    DefaultPinColor = Color.Blue,
-            //    Title = clusteredPins.Count().ToString(),
-            //    ShowCallout = true
+            //    TravelMode = TKRouteTravelMode.Driving,
+            //    Source = new Position(17.4474, 78.3762),
+            //    Destination = new Position(17.4375,78.4483),
+            //    Color = Color.Red,
+            //    LineWidth = 5
             //};
-        };
+            //Routes = new ObservableCollection<TKRoute>();
+            //Pins = new ObservableCollection<TKCustomMapPin>();
+            //Pins.Add(new RoutePin
+            //{
+            //    Route = route,
+            //    IsSource = true,
+            //    IsDraggable = true,
+            //    Position = new Position(17.4474, 78.3762),
+            //    ShowCallout = true,
+            //    DefaultPinColor = Color.Green
+            //});
+            //Pins.Add(new RoutePin
+            //{
+            //    Route = route,
+            //    IsSource = false,
+            //    IsDraggable = true,
+            //    Position = new Position(17.4375, 78.4483),
+            //    ShowCallout = true,
+            //    DefaultPinColor = Color.Red
+            //});
 
-        public SampleViewModel()
-        {
-            _mapCenter = new Position(17.4474, 78.3762);
-
-            _pins = new ObservableCollection<TKCustomMapPin>();
-            _circles = new ObservableCollection<TKCircle>();
+            //Routes.Add(route);
         }
 
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

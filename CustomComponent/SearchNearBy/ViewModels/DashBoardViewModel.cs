@@ -15,6 +15,10 @@ using Acr.UserDialogs;
 using System.Threading.Tasks;
 using Splat;
 using TK.CustomMap.Overlays;
+using CustomComponent.SearchNearBy.Pages;
+using Rg.Plugins.Popup.Extensions;
+using CustomComponent.TKCustomMAP.CustomPins;
+using TK.CustomMap.Api.Google;
 
 namespace CustomComponent.SearchNearBy.ViewModels
 {
@@ -24,11 +28,46 @@ namespace CustomComponent.SearchNearBy.ViewModels
         TKCustomMapPin _selectedPin;
         ObservableCollection<TKCustomMapPin> _custompins;
         ObservableCollection<DashboardModel> _nearbyresults;
-        public ObservableCollection<TKRoute> Routes { get; set; }
+        public ObservableCollection<TKRoute> _routes;
+
+        ObservableCollection<TKCustomMapPin> _pins;
+        ObservableCollection<TKCircle> _circles;
+        //ObservableCollection<TKPolyline> _lines;
+
+        string _firstSearchtext= string.Empty, _secondSearchtext= string.Empty, _thirdSearchtext= string.Empty, _fourthSearchtext = string.Empty;
         public DashBoardViewModel()
         {
-            GetCurrentLocation();
+          try
+            {
+                SettingsDataModel model = new SettingsDataModel();
+                model = App.SettingDatabase.GetSettings();
+
+                SrchBtnOne = model?.FirstBtnText;
+                SrchBtnTwo = model?.SecondBtnText;
+                SrchBtnThree = model?.ThirdBtnText;
+                SrchBtnFour = model?.FourthBtnText;
+
+                _firstSearchtext = model?.FirstSearchText;
+                _secondSearchtext = model?.SecondBtnText;
+                _thirdSearchtext = model?.ThirdBtnText;
+                _fourthSearchtext = model?.FourthBtnText;
+
+               // _listRefreshCommand = new Command(() =>RefreshList());
+                model?.Dispose();
+                GetCurrentLocation();
+                GetNearByPlaces("Fetching nearby companies...", Constant.NearbyUrl, "companies", "It companies", Constant.APIKey);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        public void RefreshList()
+        {
+            IsBusy = true;
             GetNearByPlaces("Fetching nearby companies...", Constant.NearbyUrl, "companies", "It companies", Constant.APIKey);
+            IsBusy = false;
         }
 
         public async void GetCurrentLocation()
@@ -72,21 +111,21 @@ namespace CustomComponent.SearchNearBy.ViewModels
         {
             get
             {
-                return new Command(() => GetNearByPlaces("Fetching nearby schools...", Constant.NearbyUrl, "school", "school", Constant.APIKey));
+                return new Command(() => GetNearByPlaces("Fetching nearby " + SrchBtnOne + "...", Constant.NearbyUrl, SrchBtnOne, _firstSearchtext, Constant.APIKey));
 
             }
 
         }
 
         /// <summary>
-        /// Gets the restaurant nearby.
+        /// Gets the restaurant nearby.Pins
         /// </summary>
         /// <value>The button two command.</value>
         public Command BtnTwoCommand
         {
             get
             {
-                return new Command(() => GetNearByPlaces("Fetching nearby restaurant...", Constant.NearbyUrl, "restaurant", "Restaurant", Constant.APIKey));
+                return new Command(() => GetNearByPlaces("Fetching nearby " + SrchBtnTwo + "...", Constant.NearbyUrl, SrchBtnTwo,_secondSearchtext, Constant.APIKey));
 
             }
         }
@@ -99,12 +138,48 @@ namespace CustomComponent.SearchNearBy.ViewModels
         {
             get
             {
-                return new Command(() => GetNearByPlaces("Fetching nearby malls...", Constant.NearbyUrl, "shopping malls", "mall", Constant.APIKey));
-
+                return new Command(() => GetNearByPlaces("Fetching nearby "+ SrchBtnThree+"...", Constant.NearbyUrl, SrchBtnThree,_thirdSearchtext, Constant.APIKey));
             }
-
         }
 
+        /// <summary>
+        /// Gets the button four command.
+        /// </summary>
+        /// <value>The button four command.</value>
+        public Command BtnFourCommand
+        {
+            get
+            {
+                return new Command(() => GetNearByPlaces("Fetching nearby " + SrchBtnFour + "...", Constant.NearbyUrl, SrchBtnFour, _fourthSearchtext, Constant.APIKey));
+            }
+        }
+
+        /// <summary>
+        /// The list refresh command.
+        /// </summary>
+        public Command ListRefreshCommand
+        {
+            get
+            {
+                return new Command(() => RefreshList());
+            }
+        }
+
+        /// <summary>
+        /// Routes bound to the <see cref="TKCustomMap"/>
+        /// </summary>
+        public ObservableCollection<TKRoute> Routes
+        {
+            get { return _routes; }
+            set
+            {
+                if (_routes != value)
+                {
+                    _routes = value;
+                    OnPropertyChanged("Routes");
+                }
+            }
+        }
 
         bool _isenabled = false;
         public bool IsEnabled
@@ -129,8 +204,20 @@ namespace CustomComponent.SearchNearBy.ViewModels
             {
                 return new Command<TKRoute>(r =>
                 {
+                  try
+                    {
+
                     // move to the bounds of the route
-                    MapRegion = r.Bounds;
+                        MapRegion = r.Bounds;
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine(ex.Message);
+                    }
+                    finally 
+                    {
+                        UserDialogs.Instance.HideLoading();
+                    }
                 });
             }
         }
@@ -200,7 +287,6 @@ namespace CustomComponent.SearchNearBy.ViewModels
             }
         }
 
-
         /// <summary>
         /// Pin Selected bound to the <see cref="TKCustomMap"/>
         /// </summary>
@@ -217,6 +303,39 @@ namespace CustomComponent.SearchNearBy.ViewModels
                 });
             }
         }
+
+        /// <summary>
+        /// Pins bound to the <see cref="TKCustomMap"/>
+        /// </summary>
+        public ObservableCollection<TKCustomMapPin> Pins
+        {
+            get { return _pins; }
+            set
+            {
+                if (_pins != value)
+                {
+                    _pins = value;
+                    OnPropertyChanged("Pins");
+                }
+            }
+        }
+
+        ///// <summary>
+        ///// Lines bound to the <see cref="TKCustomMap"/>
+        ///// </summary>
+        //public ObservableCollection<TKPolyline> Lines
+        //{
+        //    get { return _lines; }
+        //    set
+        //    {
+        //        if (_lines != value)
+        //        {
+        //            _lines = value;
+        //            OnPropertyChanged("Lines");
+        //        }
+        //    }
+        //}
+
         string itemselected;
         public string ItemSelected
         {
@@ -230,28 +349,99 @@ namespace CustomComponent.SearchNearBy.ViewModels
 
         public Command ItemSelectedCommand => new Command((s)=>
         {
-            if (Routes==null)
+            try
             {
-                Routes = new ObservableCollection<TKRoute>();
-            }
-            if (s!=null)
-            {
-                Routes.Clear();
-                var selecteditem = s as DashboardModel;
-                var route = new TKRoute
+                if (Routes == null)
                 {
-                    TravelMode = TKRouteTravelMode.Driving,
-                    Source = new Position(17.4354, 78.3827),
-                    Destination = new Position(selecteditem.Lat, selecteditem.Long),
-                    Color = Color.Red,
-                    LineWidth = 5
-                };
-                Routes.Add(route);
-            }
+                    Routes = new ObservableCollection<TKRoute>();
+                }
+                if (s != null)
+                {
+                    Device.BeginInvokeOnMainThread(() => UserDialogs.Instance.ShowLoading("Please Wait...", MaskType.Gradient));
+                    Routes.Clear();
+                    var selecteditem = s as DashboardModel;
+                    var route = new TKRoute
+                    {
+                        TravelMode = TKRouteTravelMode.Walking,
+                        Source = new Position(Lat, Long),
+                        Destination = new Position(selecteditem.Lat, selecteditem.Long),
+                        Color = Color.FromHex("#0080ff"),
+                        LineWidth = 13,
+                    };
 
+                    //CustomPins.Add(new RoutePin
+                    //{
+                    //    Route = route,
+                    //    IsSource = true,
+                    //    IsDraggable = true,
+                    //    Position = new Position(Lat, Long),
+                    //    ShowCallout = true,
+                    //    DefaultPinColor = Color.Green
+                    //});
+                    //CustomPins.Add(new RoutePin
+                    //{
+                    //    Route = route,
+                    //    IsSource = false,
+                    //    IsDraggable = true,
+                    //    Position = new Position(selecteditem.Lat, selecteditem.Long),
+                    //    ShowCallout = true,
+                    //    DefaultPinColor = Color.Red
+                    //});
+
+
+                    Routes.Add(route);
+                    RouteCalculationFinishedCommand.Execute(route);
+
+                    //GmsDirectionResult Routeresult = await GmsDirection.
+                    //Instance.CalculateRoute(new Position(Lat, Long),
+                    //                        new Position(selecteditem.Lat, selecteditem.Long), GmsDirectionTravelMode.Walking, null);
+
+                    //var routes = Routeresult.Routes.FirstOrDefault();
+
+                    //Lines = new ObservableCollection<TKPolyline>();
+                    //Pins = new ObservableCollection<TKCustomMapPin>();
+                    //IEnumerable<Position> pos = routes.Polyline.Positions;
+
+                    //var line = new TKPolyline
+                    //{
+                    //    Color = Color.Green,
+                    //    LineWidth = 10f,
+                    //    LineCoordinates = pos.ToList()
+                    //};
+
+                    //Pins.Add(new TKCustomMapPin
+                    //{
+                    //    //Route = route,
+                    //    //IsSource = true,
+                    //    IsDraggable = true,
+                    //    Position = new Position(Lat, Long),
+                    //    ShowCallout = true,
+                    //    DefaultPinColor = Color.Green
+                    //});
+                    //Pins.Add(new TKCustomMapPin
+                    //{
+                    //    //Route = route,
+                    //    //IsSource = false,
+                    //    IsDraggable = true,
+                    //    Position = new Position(selecteditem.Lat, selecteditem.Long),
+                    //    ShowCallout = true,
+                    //    DefaultPinColor = Color.Red
+                    //});
+
+                    //Lines.Add(line);
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally 
+            {
+                UserDialogs.Instance.HideLoading(); 
+            }
 
         });
-
 
         public async void GetNearByPlaces(String busytext, string nearbyurl, string type, string searchkeyword, string apikey)
         {
@@ -262,7 +452,7 @@ namespace CustomComponent.SearchNearBy.ViewModels
                 //UserDialogs.Instance.ShowImage(loadingImage, "Please Wait...", 10000);
                 UserDialogs.Instance.ShowLoading(busytext,MaskType.Gradient);
                 IList<Photo> photoReference;
-                var NearbyPredictions = await GmsPlace.Instance.GetNearByPredictions(FormattedURL(nearbyurl, type, searchkeyword, apikey));
+                var NearbyPredictions = await SearchNearBy.Services.GmsPlace.Instance.GetNearByPredictions(FormattedURL(nearbyurl, type, searchkeyword, apikey));
                 ObservableCollection<DashboardModel> NearByResultItems = new ObservableCollection<DashboardModel>();
                 ObservableCollection<TKCustomMapPin> customPinList = new ObservableCollection<TKCustomMapPin>();
 
@@ -282,7 +472,7 @@ namespace CustomComponent.SearchNearBy.ViewModels
                     //{
                     i++;
                     photoReference = item.photos;
-                    PredictionImageArray = await GmsPlace.Instance.GetPredictionImage(FormattedImageURL(Constant.ImageUrl, 200.ToString(), photoReference == null ? "" : photoReference[0].PhotoReference, apikey));
+                    PredictionImageArray = await SearchNearBy.Services.GmsPlace.Instance.GetPredictionImage(FormattedImageURL(Constant.ImageUrl, 300.ToString(), photoReference == null ? "" : photoReference[0].PhotoReference, apikey));
 
                     //}
 
@@ -312,6 +502,22 @@ namespace CustomComponent.SearchNearBy.ViewModels
                 UserDialogs.Instance.HideLoading();  
             }
         }
+
+        public Command ImageTappedCommand
+        {
+            get
+            {
+                return new Command(async(s) =>
+                {
+                    var model = s as DashboardModel;
+                    await Application.Current.MainPage. Navigation.PushPopupAsync(new ImageLargeView(model.ImgSource));
+                });
+
+            }
+        }
+
+
+
         /// <summary>
         /// Build the query string for predictions
         /// </summary>

@@ -37,6 +37,7 @@ namespace XamarinComponent.Droid
             FormsGoogleMaps.Init(this, bundle);
             //TKGoogleMaps.Init(this, bundle);
             UserDialogs.Init(this);
+            FAB.Droid.FloatingActionButtonRenderer.InitControl();
             LoadApplication(new App());
 
         }

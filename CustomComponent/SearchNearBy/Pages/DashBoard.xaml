@@ -3,7 +3,8 @@
       xmlns:lvbehavior="clr-namespace:CustomComponent.Behaviors;assembly:CustomComponent"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="CustomComponent.SearchNearBy.Pages.DashBoard" 
-    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" xmlns:progressring="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin">
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+    xmlns:progressring="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin" x:Name="TheDashBoardPage">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="styleforlabel" TargetType="Label">
@@ -28,13 +29,13 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" x:Name="btnOne" TextColor="White" FontSize="10" Command="{Binding BtnOneCommand}" Text="Schools">
+                <Button Grid.Column="0" x:Name="btnOne" TextColor="White" FontSize="10" Command="{Binding BtnOneCommand}" Text="{Binding SrchBtnOne}">
                 </Button>
-                <Button Grid.Column="1" FontSize="10" TextColor="White" x:Name="btnTwo" Command="{Binding BtnTwoCommand}" Text="Restaurant">
+                <Button Grid.Column="1" FontSize="10" TextColor="White" x:Name="btnTwo" Command="{Binding BtnTwoCommand}" Text="{Binding SrchBtnTwo}">
                 </Button>
-                <Button Grid.Column="2" FontSize="10" TextColor="White" x:Name="btnThree" Command="{Binding BtnThreeCommand}" Text="Malls">
+                <Button Grid.Column="2" FontSize="10" TextColor="White" x:Name="btnThree" Command="{Binding BtnThreeCommand}" Text="{Binding SrchBtnThree}">
                 </Button>
-                <Button Grid.Column="3" FontSize="10" TextColor="White" x:Name="btnFour" Command="{Binding BtnFourCommand}" Text="IT Companies">
+                <Button Grid.Column="3" FontSize="10" TextColor="White" x:Name="btnFour" Command="{Binding BtnFourCommand}" Text="{Binding SrchBtnFour}">
                 </Button>
             </Grid>
             <StackLayout x:Name="stkMap" Grid.Row="1">
@@ -43,7 +44,9 @@
                 CachingStrategy="RecycleElement" 
                 HasUnevenRows="true" ItemsSource="{Binding NearByReaults}" 
                 Grid.Row="2" SeparatorVisibility="None"
-                SelectedItem="{Binding ItemSelected}" BackgroundColor="#C23838">
+                SelectedItem="{Binding ItemSelected}" IsPullToRefreshEnabled="true" 
+                RefreshCommand="{Binding ListRefreshCommand}"
+                IsRefreshing="{Binding IsBusy}" BackgroundColor="#C23838">
                 <ListView.Behaviors>
                 <lvbehavior:SelectedItemToCommandBehaviour Command="{Binding ItemSelectedCommand}" />
                 </ListView.Behaviors>
@@ -71,9 +74,16 @@
                                         <Label Text="{Binding Status}" FontAttributes="Bold" TextColor="#FFFFFF" FontSize="11" VerticalOptions="CenterAndExpand" Grid.Row="3" />
                                     </Grid>
 <!--                                    <Image Source="{Binding ImgSource}" Grid.Column="1"></Image>-->
-                                    <controls:CircleImage Grid.Column="1" Source="{Binding ImgSource}"
-                                        BorderThickness="3" BorderColor="White" WidthRequest="75" HeightRequest="75" Aspect="AspectFill">
-                                       
+                                    <controls:CircleImage x:Name="imgPlaceImage" Grid.Column="1"
+                                        Source="{Binding ImgSource}"
+                                        BorderThickness="3" BorderColor="White"
+                                        WidthRequest="75" 
+                                        HeightRequest="75" Aspect="AspectFill">
+                                       <controls:CircleImage.GestureRecognizers>
+                                              <TapGestureRecognizer Command="{Binding Source={x:Reference TheDashBoardPage}, Path=BindingContext.ImageTappedCommand}" CommandParameter="{Binding .}">
+
+                                            </TapGestureRecognizer>
+                                            </controls:CircleImage.GestureRecognizers>
                                     </controls:CircleImage>
                                 </Grid>
                             </StackLayout>
@@ -83,4 +93,7 @@
             </ListView>
         </Grid>
     </ContentPage.Content>
-</ContentPage>
+</ContentPage><!--
+                                                Tapped="{Binding }"   
+                                                    NumberOfTapsRequired="1" >-->
+<!-- "OnTapGestureRecognizerTapped"-->
