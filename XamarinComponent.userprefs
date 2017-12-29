@@ -1,15 +1,6 @@
 ﻿<Properties StartupConfiguration="{35DE9D59-6E57-42AB-870E-EC8105353BF5}|Default" GitUserInfo="UsingGIT" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.Workbench ActiveDocument="XamarinComponent.git Status">
     <Files>
-      <File FileName="CustomComponent/UserControl/CustomLogin.xaml" Line="20" Column="1" />
-      <File FileName="CustomComponent/SearchNearBy/Pages/DashBoard.xaml" Line="99" Column="39" />
-      <File FileName="CustomComponent/SearchNearBy/Pages/DashBoard.xaml.cs" Line="35" Column="44" />
-      <File FileName="CustomComponent/SearchNearBy/ViewModels/DashBoardViewModel.cs" Line="467" Column="17" />
-      <File FileName="CustomComponent/Behaviors/SelectedItemToCommandBehaviour.cs" Line="31" Column="44" />
-      <File FileName="CustomComponent/RestClient/RestClient.cs" Line="21" Column="13" />
-      <File FileName="CustomComponent/SearchNearBy/ViewModels/SettingsViewModel.cs" Line="13" Column="10" />
-      <File FileName="CustomComponent/SearchNearBy/Models/SettingsModel.cs" Line="34" Column="33" />
-      <File FileName="CustomComponent/Views/MapView.xaml" Line="179" Column="1" />
       <File FileName="XamarinComponent.git Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>

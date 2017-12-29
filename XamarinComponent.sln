@@ -7,10 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinComponent.Droid", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomComponent", "CustomComponent\CustomComponent.csproj", "{0F2D3400-32C5-4B89-BCEE-BB4E1D033C29}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KnowledgeBase", "KnowledgeBase", "{5DD5957B-7889-45D0-952F-B6597326395A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KnowledgeBase", "KnowledgeBase", "{AC1470CD-86E0-462B-B469-69479CB58E01}"
 	ProjectSection(SolutionItems) = preProject
-		Implement Google Maps in Xamarin.Forms_.pdf = Implement Google Maps in Xamarin.Forms_.pdf
-		Xamarin Plugin and Nuget Package.pdf = Xamarin Plugin and Nuget Package.pdf
+		Implement Google Maps in Xamarin.Forms.docx = Implement Google Maps in Xamarin.Forms.docx
+		Xamarin Plugin and Nuget Package.docx = Xamarin Plugin and Nuget Package.docx
 	EndProjectSection
 EndProject
 Global
