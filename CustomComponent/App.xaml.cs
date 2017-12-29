@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CustomComponent.CustomView;
 using CustomComponent.Helpers;
-using CustomComponent.SearchNearBy.Pages;
 using CustomComponent.SearchNearBy.Services;
 using CustomComponent.TKCustomMAP.Pages;
-using CustomComponent.Views;
 using TK.CustomMap;
 using TK.CustomMap.Api.Google;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
-using XamarinComponent.Views;
 
 namespace CustomComponent
 {
+
     public partial class App : Application
     {
         static SettingsDatabase _settingDatabase;

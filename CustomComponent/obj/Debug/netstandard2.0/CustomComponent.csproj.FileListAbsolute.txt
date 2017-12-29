@@ -41,3 +41,4 @@
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.AssemblyInfo.cs
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.dll
 /Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.pdb
+/Users/charry/Projects/Xamarin007722/XamarinComponent.git/CustomComponent/obj/Debug/netstandard2.0/CustomComponent.csprojResolveAssemblyReference.cache

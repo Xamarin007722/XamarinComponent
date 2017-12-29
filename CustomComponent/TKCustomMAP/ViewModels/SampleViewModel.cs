@@ -289,7 +289,7 @@ namespace CustomComponent.TKCustomMAP.ViewModels
                         var pin = new TKCustomMapPin
                         {
                             Position = new Position(MapCenter.Latitude, MapCenter.Longitude),
-                            Title = string.Format("Pin {0}, {1}", MapCenter.Latitude, MapCenter.Longitude),
+                            Title = details.Item.FormattedAddress,
                             ShowCallout = true,
                             IsDraggable = true
                         };
@@ -430,7 +430,6 @@ namespace CustomComponent.TKCustomMAP.ViewModels
         public SampleViewModel()
         {
             _mapCenter = new Position(17.4474, 78.3762);
-
             _pins = new ObservableCollection<TKCustomMapPin>();
             _circles = new ObservableCollection<TKCircle>();
         }

@@ -38,6 +38,7 @@ namespace CustomComponent.TKCustomMAP.Pages
             mapView.SetBinding(TKCustomMap.MapRegionProperty, "MapRegion");
             mapView.SetBinding(TKCustomMap.RouteCalculationFinishedCommandProperty, "RouteCalculationFinishedCommand");
             mapView.IsRegionChangeAnimated = true;
+            mapView.IsShowingUser = true; 
 
             autoComplete.SetBinding(PlacesAutoComplete.BoundsProperty, "MapRegion");
 

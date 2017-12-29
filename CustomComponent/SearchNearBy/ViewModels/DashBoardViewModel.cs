@@ -112,7 +112,6 @@ namespace CustomComponent.SearchNearBy.ViewModels
             get
             {
                 return new Command(() => GetNearByPlaces("Fetching nearby " + SrchBtnOne + "...", Constant.NearbyUrl, SrchBtnOne, _firstSearchtext, Constant.APIKey));
-
             }
 
         }
@@ -440,14 +439,16 @@ namespace CustomComponent.SearchNearBy.ViewModels
             {
                 UserDialogs.Instance.HideLoading(); 
             }
-
         });
 
         public async void GetNearByPlaces(String busytext, string nearbyurl, string type, string searchkeyword, string apikey)
         {
          try
             {
-
+                if (Routes!=null)
+                {
+                    Routes.Clear();
+                }
                 // var loadingImage = await BitmapLoader.Current.LoadFromResource("mapIcon.png", 100, 100);
                 //UserDialogs.Instance.ShowImage(loadingImage, "Please Wait...", 10000);
                 UserDialogs.Instance.ShowLoading(busytext,MaskType.Gradient);
@@ -544,8 +545,5 @@ namespace CustomComponent.SearchNearBy.ViewModels
         {
             return string.Format("{0}?maxwidth={1}&photoreference={2}&key={3}", imageurl,width, photoreference,apikey);
         }
-
-      
-
-    }
+            }
 }

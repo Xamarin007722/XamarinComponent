@@ -139,7 +139,7 @@
                     <Button
                         x:Name="buttonGeocode"
                         VerticalOptions="Center"
-                        Text="GEOCODE"
+                        Text="GO"
                         Grid.Row="9"
                         Grid.Column="1" />
                     

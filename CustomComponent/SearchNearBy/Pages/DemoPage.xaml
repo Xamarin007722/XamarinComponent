@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CustomComponent.SearchNearBy.Pages.DemoPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+     xmlns:ctrl="clr-namespace:CustomComponent.UserControl;assembly:CustomComponent" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="CustomComponent.SearchNearBy.Pages.DemoPage">
 <ContentPage.ToolbarItems>
         <ToolbarItem Text="Start Test"
                      Command="{Binding RunSimulationCommand}" />
         </ContentPage.ToolbarItems>
     <ContentPage.Content>
         
-        <StackLayout x:Name="stkMap" >
+        <StackLayout x:Name="stkMap" Padding="10">
+          <ctrl:CustomLoador InfoImage="DoChat.png" InfoText="Please Wait..." />
         </StackLayout>
 	</ContentPage.Content>
 </ContentPage>
