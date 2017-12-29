@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using CustomComponent.SearchNearBy.ViewModels;
 using TK.CustomMap;
 using Xamarin.Forms;
@@ -12,13 +13,15 @@ namespace CustomComponent.SearchNearBy.Pages
         public DemoPage()
         {
             InitializeComponent();
+
             INIT();
             this.BindingContext = new DemoViewModel();
         }
 
-        public void INIT()
+        public async void INIT()
         {
-           
+            //imgIcon.RotateXTo(251 * 360, duration)
+            //imgIcon.RotateYTo(199 * 360, duration
             var HitechCity = new Position(17.4474, 78.3762);
             var mapView = new TKCustomMap(MapSpan.FromCenterAndRadius(HitechCity, Distance.FromKilometers(2)));
             mapView.SetBinding(TKCustomMap.CustomPinsProperty, "Pins");
@@ -39,6 +42,7 @@ namespace CustomComponent.SearchNearBy.Pages
             mapView.IsShowingUser = true;
 
             stkMap.Children.Add(mapView);
+           
         }
     }
 }

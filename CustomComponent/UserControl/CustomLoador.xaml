@@ -2,17 +2,10 @@
 <Grid xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="CustomComponent.UserControl.CustomLoador">
-    <ContentView x:Name="bgLayer" BackgroundColor="#000000" IsVisible="true"  Opacity="0.2" />
-       <!-- <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                    BackgroundColor="Transparent" OutlineColor="Black"
-                    HasShadow="true">-->
-                    <StackLayout IsVisible="true" Padding="12" 
-                    BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="CenterAndExpand">
-                   <!-- <ActivityIndicator  IsRunning="true" Color="#80000000" />-->
-                   <Image x:Name="imgIcon" Source="icon.png"/>
+    
+                  <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                   <Image x:Name="imgIcon"  Source="icon.png"/>
                     <Label x:Name="lblMsg" Text="Loading..." HorizontalOptions="Center"
                     TextColor="White" />
-                </StackLayout>
-               <!-- </Frame>-->
+                  </StackLayout>
 </Grid>

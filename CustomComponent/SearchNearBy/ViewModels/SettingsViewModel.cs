@@ -1,6 +1,7 @@
 ﻿using System;
 using CustomComponent.SearchNearBy.Models;
 using Xamarin.Forms;
+using XamarinComponent.Interface;
 
 namespace CustomComponent.SearchNearBy.ViewModels
 {
@@ -33,28 +34,35 @@ namespace CustomComponent.SearchNearBy.ViewModels
                     model.FourthSearchText = EntryFourthSearchText;
 
                     App.SettingDatabase.SaveSettings(model);
-                    Application.Current.MainPage.DisplayAlert("Success", "Settings saved successfully", "OK");
                     model.Dispose();
+                    ClearData();
+                    DependencyService.Get<IAndroidPopUp>().ShowSnackbar("Settings saved successfully");
                 }
                 catch (Exception ex)
                 {
-
+                    Application.Current.MainPage.DisplayAlert("Error", "Something Went Wrong", "OK");
+                         
                 }
                 finally 
                 {
-                    EntryFirstText=string.Empty;
-                    EntrySecondText= string.Empty;
-                    EntryThirdText= string.Empty;
-                    EntryFourthText= string.Empty;
-
-                    EntryFirstSearchText= string.Empty;
-                    EntrySecondSearchText= string.Empty;
-                    EntryThirdSearchText= string.Empty;
-                    EntryFourthSearchText= string.Empty;
+                    
 
                 }
 
             }); }
+        }
+
+        protected void ClearData()
+        {
+            EntryFirstText = string.Empty;
+            EntrySecondText = string.Empty;
+            EntryThirdText = string.Empty;
+            EntryFourthText = string.Empty;
+
+            EntryFirstSearchText = string.Empty;
+            EntrySecondSearchText = string.Empty;
+            EntryThirdSearchText = string.Empty;
+            EntryFourthSearchText = string.Empty;
         }
 
     }

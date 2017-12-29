@@ -1,4 +1,5 @@
 ﻿using System;
+using PropertyChanged;
 using SQLite;
 using UtilityClasses.Utility;
 
@@ -20,6 +21,7 @@ namespace CustomComponent.SearchNearBy.Models
 
     }
 
+    [AddINotifyPropertyChangedInterface]
     public class SettingsModel
     {
         string _entryFirstText;
@@ -48,7 +50,6 @@ namespace CustomComponent.SearchNearBy.Models
             get { return _entryFoutyhText; }
             set { _entryFoutyhText = value; }
         }
-
 
 
         string _entryFirstSearchText;

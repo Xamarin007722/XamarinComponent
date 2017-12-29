@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace CustomComponent.UserControl
 {
     public partial class CustomLoador : Grid
     {
-        
         private static BindableProperty InfoMessage = BindableProperty.Create(
                                                          propertyName: "InfoText",
                                                          returnType: typeof(string),
@@ -26,7 +26,11 @@ namespace CustomComponent.UserControl
         public CustomLoador()
         {
             InitializeComponent();
-
+            Animate();
+        }
+        public void Animate()
+        {
+            imgIcon.RotateTo(307 * 360, 600000);
         }
 
         public string InfoText
@@ -40,7 +44,6 @@ namespace CustomComponent.UserControl
             get { return (string)GetValue(InfoIcon); }
             set { SetValue(InfoIcon, value); }
         }
-
 
         private static void ImageSourcePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {

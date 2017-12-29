@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "8c872c0b960980aa002bc9f4479e8892297b40b4"
+    "signature": "389827f2390a445bda28c8f08387f092eab6e47b"
   },
   "compilationOptions": {},
   "targets": {
@@ -16,9 +16,11 @@
           "NETStandard.Library": "2.0.0",
           "Newtonsoft.Json": "10.0.3",
           "Plugin.Permissions": "2.1.0",
+          "PropertyChanged.Fody": "2.2.4",
           "Rg.Plugins.Popup": "1.0.4",
           "TK.CustomMap": "1.6.1",
           "Toasts.Forms.Plugin": "3.2.1",
+          "Validation": "2.4.18",
           "Xam.Plugin.Connectivity": "3.0.3",
           "Xam.Plugin.Geolocator": "4.1.3",
           "Xam.Plugin.Screenshot": "1.0.11",
@@ -49,6 +51,7 @@
           "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/FAB.Forms.dll": {}
         }
       },
+      "Fody/2.2.1": {},
       "Microsoft.Bcl/1.1.10": {
         "dependencies": {
           "Microsoft.Bcl.Build": "1.0.14"
@@ -143,6 +146,14 @@
         "runtime": {
           "lib/netstandard1.0/Plugin.Permissions.Abstractions.dll": {},
           "lib/netstandard1.0/Plugin.Permissions.dll": {}
+        }
+      },
+      "PropertyChanged.Fody/2.2.4": {
+        "dependencies": {
+          "Fody": "2.2.1"
+        },
+        "runtime": {
+          "lib/netstandard1.0/PropertyChanged.dll": {}
         }
       },
       "Rg.Plugins.Popup/1.0.4": {
@@ -616,6 +627,11 @@
           "lib/netstandard1.1/Toasts.Forms.Plugin.Abstractions.dll": {}
         }
       },
+      "Validation/2.4.18": {
+        "runtime": {
+          "lib/netstandard1.3/Validation.dll": {}
+        }
+      },
       "Xam.Plugin.Connectivity/3.0.3": {
         "dependencies": {
           "NETStandard.Library": "2.0.0"
@@ -720,6 +736,13 @@
       "path": "fab.forms/2.2.0-pre1",
       "hashPath": "fab.forms.2.2.0-pre1.nupkg.sha512"
     },
+    "Fody/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rzPJyhnSCZk7XYni9YFPtcZsRQOxbv0bWmCgw2zeBydRujyS0mgtBhxupdt+q4S+2ZomLjSYmIQOte2r6ePjXA==",
+      "path": "fody/2.2.1",
+      "hashPath": "fody.2.2.1.nupkg.sha512"
+    },
     "Microsoft.Bcl/1.1.10": {
       "type": "package",
       "serviceable": true,
@@ -810,6 +833,13 @@
       "sha512": "sha512-2gzHl0FVNtl7BQMcfTH7Eakwv8bCMXLnLFSYgMPgX35WX3G5M3SkiZCC9JOxJJ9mD/3iIEfYiRxPIWkURwEqOw==",
       "path": "plugin.permissions/2.1.0",
       "hashPath": "plugin.permissions.2.1.0.nupkg.sha512"
+    },
+    "PropertyChanged.Fody/2.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kvC31zSdTXY8znT9aLFZsW27ck2NfuqB0LY36OHf2PpHn2Bd67/U0SEuCGpvrB5HpLlwoC0VF5vGHEaQOm28ow==",
+      "path": "propertychanged.fody/2.2.4",
+      "hashPath": "propertychanged.fody.2.2.4.nupkg.sha512"
     },
     "Rg.Plugins.Popup/1.0.4": {
       "type": "package",
@@ -1125,6 +1155,13 @@
       "sha512": "sha512-4rPUkEMNPkBc0Hku/L3CMCBK1bPo/J8ExAFADgPcNBzoqzJVr2fZuOk1lr8HC3xbMwbOtb8yCWZhkhqni2Gb2g==",
       "path": "toasts.forms.plugin/3.2.1",
       "hashPath": "toasts.forms.plugin.3.2.1.nupkg.sha512"
+    },
+    "Validation/2.4.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfvWJ1QeuZ1FQCkqgXTu1cOkRkbNCfxs4Tat+abXLwom6OXbULVhRGp34BTvVB4XPxj6VIAl7KfLfStXMt/Ehw==",
+      "path": "validation/2.4.18",
+      "hashPath": "validation.2.4.18.nupkg.sha512"
     },
     "Xam.Plugin.Connectivity/3.0.3": {
       "type": "package",
