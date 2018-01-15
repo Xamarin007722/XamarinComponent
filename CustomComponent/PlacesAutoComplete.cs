@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TK.CustomMap.Api;
 using TK.CustomMap.Api.Google;
-using TK.CustomMap.Api.OSM;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -30,7 +29,6 @@ namespace CustomComponent
         SearchBar _searchBar;
         Entry _entry;
         ListView _autoCompleteListView;
-
         IEnumerable<IPlaceResult> _predictions;
 
         public PlacesApi ApiToUse { get; set; }
@@ -45,6 +43,10 @@ namespace CustomComponent
             get { return (Command<IPlaceResult>)GetValue(PlaceSelectedCommandProperty); }
             set { SetValue(PlaceSelectedCommandProperty, value); }
         }
+        /// <summary>
+        /// Gets the height of search bar.
+        /// </summary>
+        /// <value>The height of search bar.</value>
         public double HeightOfSearchBar
         {
             get
@@ -52,6 +54,10 @@ namespace CustomComponent
                 return _useSearchBar ? _searchBar.Height : _entry.Height;
             }
         }
+        /// <summary>
+        /// Gets or sets the search text.
+        /// </summary>
+        /// <value>The search text.</value>
         string SearchText
         {
             get
@@ -76,7 +82,10 @@ namespace CustomComponent
             _useSearchBar = useSearchBar;
             Init();
         }
-
+        /// <summary>
+        /// User search bar placeholder.
+        /// </summary>
+        /// <value>The placeholder.</value>
         public string Placeholder
         {
             get { return _useSearchBar ? _searchBar.Placeholder : _entry.Placeholder; }
@@ -93,6 +102,10 @@ namespace CustomComponent
             _useSearchBar = true;
             Init();
         }
+        /// <summary>
+        /// Creates the autocomplete listview 
+        /// and populate with the results
+        /// </summary>
         void Init()
         {
             _autoCompleteListView = new ListView
@@ -148,6 +161,11 @@ namespace CustomComponent
             _textChangeItemSelected = false;
         }
 
+        /// <summary>
+        /// Hanndle search button pressed.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         void SearchButtonPressed(object sender, EventArgs e)
         {
             if (_predictions != null && _predictions.Any())
@@ -156,6 +174,11 @@ namespace CustomComponent
                 Reset();
         }
 
+        /// <summary>
+        /// Search the place When text changes .
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         void SearchTextChanged(object sender, TextChangedEventArgs e)
         {
             if (_textChangeItemSelected)
@@ -202,6 +225,11 @@ namespace CustomComponent
                 
             }
         }
+        /// <summary>
+        /// Handle selected List Items .
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         void ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null) return;
@@ -224,6 +252,9 @@ namespace CustomComponent
 
             Reset();
         }
+        /// <summary>
+        /// Reset this instance.
+        /// </summary>
         void Reset()
         {
             _autoCompleteListView.ItemsSource = null;

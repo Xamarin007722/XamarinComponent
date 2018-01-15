@@ -23,7 +23,7 @@ namespace XamarinComponent.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             base.OnCreate(bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            ImageCircleRenderer.Init();
+            ImageCircleRenderer.Init();// Initialize the circle image renderer
             //var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
             //x = typeof(Xamarin.Forms.Themes.LightThemeResources);
             //x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
@@ -41,7 +41,6 @@ namespace XamarinComponent.Droid
             LoadApplication(new App());
 
         }
-
         public override void OnBackPressed()
         {
             base.OnBackPressed();   

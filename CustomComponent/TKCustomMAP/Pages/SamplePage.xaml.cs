@@ -1,12 +1,14 @@
 ﻿using System;
 using CustomComponent.TKCustomMAP.ViewModels;
-using FAB.Forms;
 using TK.CustomMap;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
 namespace CustomComponent.TKCustomMAP.Pages
 {
+    /// <summary>
+    /// Sample page.
+    /// </summary>
     public partial class SamplePage : ContentPage
     {
         public SamplePage()
@@ -17,6 +19,9 @@ namespace CustomComponent.TKCustomMAP.Pages
             BindingContext = new SampleViewModel();
         }
 
+        /// <summary>
+        ///  Creates the mapview instance and hence Creates the view.
+        /// </summary>
         async void CreateView()
         {
             var autoComplete = new PlacesAutoComplete { ApiToUse = PlacesAutoComplete.PlacesApi.Google };
@@ -27,7 +32,6 @@ namespace CustomComponent.TKCustomMAP.Pages
             mapView.SetBinding(TKCustomMap.CustomPinsProperty, "Pins");
             mapView.SetBinding(TKCustomMap.MapClickedCommandProperty, "MapClickedCommand");
             mapView.SetBinding(TKCustomMap.MapLongPressCommandProperty, "MapLongPressCommand");
-
             mapView.SetBinding(TKCustomMap.PinSelectedCommandProperty, "PinSelectedCommand");
             mapView.SetBinding(TKCustomMap.SelectedPinProperty, "SelectedPin");
             mapView.SetBinding(TKCustomMap.RoutesProperty, "Routes");

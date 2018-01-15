@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using CustomComponent.TKCustomMAP.ViewModels;
 using TK.CustomMap;
 using TK.CustomMap.Overlays;
@@ -9,6 +7,9 @@ using Xamarin.Forms.Maps;
 
 namespace CustomComponent.TKCustomMAP.Pages
 {
+    /// <summary>
+    /// Add route page.
+    /// </summary>
     public partial class AddRoutePage : ContentPage
     {
         public AddRoutePage(ObservableCollection<TKRoute> routes, ObservableCollection<TKCustomMapPin> pins, MapSpan bounds)

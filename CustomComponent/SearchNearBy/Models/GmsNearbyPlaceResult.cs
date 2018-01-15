@@ -22,6 +22,9 @@ namespace CustomComponent.SearchNearBy.Models
         public string SearchTerm { get; internal set; }
     }
 
+    /// <summary>
+    /// Gms near by place prediction results fields.
+    /// </summary>
     public class GmsNearByPlacePrediction
     {
 

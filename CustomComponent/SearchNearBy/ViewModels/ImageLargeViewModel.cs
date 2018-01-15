@@ -4,12 +4,19 @@ using Xamarin.Forms;
 
 namespace CustomComponent.SearchNearBy.ViewModels
 {
+    /// <summary>
+    /// Image large view model.
+    /// </summary>
     public class ImageLargeViewModel
     {
         public ImageLargeViewModel()
         {
         }
 
+        /// <summary>
+        /// Gets the make call API to initiate the call.
+        /// </summary>
+        /// <value>The make call command.</value>
         public Command MakeCallCommand
         {
             get { return new Command(()=>
@@ -21,6 +28,10 @@ namespace CustomComponent.SearchNearBy.ViewModels
             }); }
 
         }
+        /// <summary>
+        /// Gets the write email API to send a mail.
+        /// </summary>
+        /// <value>The write email command.</value>
         public Command WriteEmailCommand
         {
             get
@@ -44,6 +55,10 @@ namespace CustomComponent.SearchNearBy.ViewModels
             }
 
         }
+        /// <summary>
+        /// Gets the do chat API to send a message.
+        /// </summary>
+        /// <value>The do chat command.</value>
         public Command DoChatCommand
         {
             get

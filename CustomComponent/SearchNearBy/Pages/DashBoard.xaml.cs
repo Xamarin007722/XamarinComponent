@@ -3,11 +3,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 using CustomComponent.SearchNearBy.ViewModels;
-using ProgressRingControl.Forms.Plugin;
-using Acr.UserDialogs;
-using System;
-using Rg.Plugins.Popup.Extensions;
-using CustomComponent.SearchNearBy.Models;
 
 namespace CustomComponent.SearchNearBy.Pages
 {

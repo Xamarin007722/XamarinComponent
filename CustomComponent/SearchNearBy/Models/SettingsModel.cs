@@ -1,10 +1,12 @@
-﻿using System;
-using PropertyChanged;
+﻿using PropertyChanged;
 using SQLite;
 using UtilityClasses.Utility;
 
 namespace CustomComponent.SearchNearBy.Models
 {
+    /// <summary>
+    /// Settings page model class .
+    /// </summary>
     public class SettingsDataModel:BaseDisposable
     {
         [PrimaryKey,AutoIncrement]
@@ -20,7 +22,9 @@ namespace CustomComponent.SearchNearBy.Models
         public string FourthSearchText { get; set; }
 
     }
-
+    /// <summary>
+    /// Settings page model properties .
+    /// </summary>
     [AddINotifyPropertyChangedInterface]
     public class SettingsModel
     {

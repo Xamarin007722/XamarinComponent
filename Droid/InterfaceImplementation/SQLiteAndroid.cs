@@ -10,6 +10,10 @@ namespace XamarinComponent.Droid.InterfaceImplementation
 {
     public class SQLiteAndroid : ISQLite
     {
+        /// <summary>
+        /// Creates and Gets the connection.
+        /// </summary>
+        /// <returns>The connection.</returns>
         public SQLiteConnection GetConnection()
         {
             var filename = "Settings.db3";

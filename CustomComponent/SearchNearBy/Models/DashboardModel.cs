@@ -1,11 +1,11 @@
-﻿using System;
-using Acr.UserDialogs;
-using MvvmHelpers;
+﻿using MvvmHelpers;
 using Xamarin.Forms;
-using Xamarin.Forms.Maps;
 
 namespace CustomComponent.SearchNearBy.Models
 {
+    /// <summary>
+    /// Dashboard page elements fields.
+    /// </summary>
     public class DashboardModel:BaseViewModel
     {
         

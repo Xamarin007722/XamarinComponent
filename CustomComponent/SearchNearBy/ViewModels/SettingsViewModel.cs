@@ -52,6 +52,9 @@ namespace CustomComponent.SearchNearBy.ViewModels
             }); }
         }
 
+        /// <summary>
+        /// Clears the data.
+        /// </summary>
         protected void ClearData()
         {
             EntryFirstText = string.Empty;

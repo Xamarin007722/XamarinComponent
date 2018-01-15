@@ -12,10 +12,20 @@ namespace XamarinComponent.Views
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Shows the toast message.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         void ShowToast(object sender, System.EventArgs e)
         {
             DependencyService.Get<IAndroidPopUp>().ShowToast("Hi I'm Toast");
         }
+        /// <summary>
+        /// Shows the message as snack bar.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         void ShowSnackBar(object sender, System.EventArgs e)
         {
             DependencyService.Get<IAndroidPopUp>().ShowSnackbar("Hi I'm Snack Bar");
