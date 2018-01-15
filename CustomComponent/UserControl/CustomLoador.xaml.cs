@@ -7,6 +7,9 @@ namespace CustomComponent.UserControl
 {
     public partial class CustomLoador : Grid
     {
+        /// <summary>
+        /// InfoMessage bindable property.
+        /// </summary>
         private static BindableProperty InfoMessage = BindableProperty.Create(
                                                          propertyName: "InfoText",
                                                          returnType: typeof(string),
@@ -14,7 +17,9 @@ namespace CustomComponent.UserControl
                                                          defaultValue: "Loading...",
                                                          defaultBindingMode: BindingMode.TwoWay,
                                                          propertyChanged: titleTextPropertyChanged);
-        
+        /// <summary>
+        /// InfoIcon bindable property.
+        /// </summary>
         private static BindableProperty InfoIcon = BindableProperty.Create(
                                                        propertyName: "InfoImage",
                                                        returnType: typeof(string),
@@ -28,6 +33,9 @@ namespace CustomComponent.UserControl
             InitializeComponent();
             Animate();
         }
+        /// <summary>
+        /// Rotate the image
+        /// </summary>
         public void Animate()
         {
             imgIcon.RotateTo(307 * 360, 600000);

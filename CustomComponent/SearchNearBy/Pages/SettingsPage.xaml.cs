@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using CustomComponent.SearchNearBy.ViewModels;
+﻿using CustomComponent.SearchNearBy.ViewModels;
 using Xamarin.Forms;
 
 namespace CustomComponent.SearchNearBy.Pages

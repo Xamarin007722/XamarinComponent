@@ -11,6 +11,10 @@ namespace XamarinComponent.iOS.InterfaceImplementation
 {
     public class SQLiteiOS:ISQLite
     {
+        /// <summary>
+        /// Creates and Gets the connection.
+        /// </summary>
+        /// <returns>The connection.</returns>
         public SQLiteConnection GetConnection ()  
         {  
 

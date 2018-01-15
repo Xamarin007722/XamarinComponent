@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using CustomComponent.TKCustomMAP.CustomPins;
 using MvvmHelpers;
 using TK.CustomMap;
 using TK.CustomMap.Api;
 using TK.CustomMap.Api.Google;
-using TK.CustomMap.Api.OSM;
 using TK.CustomMap.Overlays;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
 namespace CustomComponent.SearchNearBy.ViewModels
 {
+    /// <summary>
+    /// Demo view model.
+    /// </summary>
     public class DemoViewModel:BaseViewModel
     {
       
-
+        /// <summary>
+        /// The map and fileds declaration region.
+        /// </summary>
         MapSpan _mapRegion = MapSpan.FromCenterAndRadius(new Position(17.4474, 78.3762), Distance.FromKilometers(2));
         Position _mapCenter;
         TKCustomMapPin _selectedPin;
@@ -290,6 +292,10 @@ namespace CustomComponent.SearchNearBy.ViewModels
             }
         }
 
+        /// <summary>
+        /// Clear the map pins,route etc.
+        /// </summary>
+        /// <value>The clear map command.</value>
         public Command ClearMapCommand
         {
             get
@@ -328,6 +334,9 @@ namespace CustomComponent.SearchNearBy.ViewModels
           
         }
 
+        /// <summary>
+        /// Getroute/Draw route between two given position.
+        /// </summary>
         public async void Getroute()
         {
             GmsDirectionResult Routeresult= await  GmsDirection.

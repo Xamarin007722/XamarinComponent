@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using CustomComponent.SearchNearBy.ViewModels;
+﻿using CustomComponent.SearchNearBy.ViewModels;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Pages;
 using Xamarin.Forms;

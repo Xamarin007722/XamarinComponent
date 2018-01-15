@@ -49,10 +49,13 @@
     <Folder Include="SearchNearBy\ViewModels\" />
     <Folder Include="SearchNearBy\Services\" />
     <Folder Include="SearchNearBy\Models\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="XamarinComponentPage.xaml.cs" />
     <Compile Remove="SearchNearBy\Models\SettingsTokenModel.cs" />
+    <Compile Remove="Views\Loading.cs" />
+    <Compile Remove="EmptyClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\HindiResourceFile.Designer.cs">

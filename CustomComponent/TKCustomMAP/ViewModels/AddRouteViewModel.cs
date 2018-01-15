@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using CustomComponent.TKCustomMAP.CustomPins;
 using TK.CustomMap;
 using TK.CustomMap.Api;
@@ -23,6 +18,10 @@ namespace CustomComponent.TKCustomMAP.ViewModels
         public ObservableCollection<TKRoute> Routes { get; set; }
         public MapSpan Bounds { get; set; }
 
+        /// <summary>
+        /// Gets from place position .
+        /// </summary>
+        /// <value>From selected command.</value>
         public Command<IPlaceResult> FromSelectedCommand
         {
             get
@@ -56,6 +55,10 @@ namespace CustomComponent.TKCustomMAP.ViewModels
                 });
             }
         }
+        /// <summary>
+        /// Gets the to place position.
+        /// </summary>
+        /// <value>To selected command.</value>
         public Command<IPlaceResult> ToSelectedCommand
         {
             get
@@ -89,6 +92,10 @@ namespace CustomComponent.TKCustomMAP.ViewModels
             }
         }
 
+        /// <summary>
+        /// Calculate the route between two position.
+        /// </summary>
+        /// <value>The add route command.</value>
         public Command AddRouteCommand
         {
            get

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using CustomComponent.SearchNearBy.ViewModels;
+﻿using CustomComponent.SearchNearBy.ViewModels;
 using TK.CustomMap;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;

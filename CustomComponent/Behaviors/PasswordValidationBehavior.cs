@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <summary>
+// Password Validation behaviors
+// Created by Akhilesh 7 Nov 2017
+// </summary>
+using System;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
 

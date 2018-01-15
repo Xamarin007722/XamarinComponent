@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Plugin.Connectivity;
 using System.Collections.Generic;
 using Plugin.Connectivity.Abstractions;

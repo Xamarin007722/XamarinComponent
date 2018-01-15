@@ -8,20 +8,17 @@ using Plugin.Permissions.Abstractions;
 using TK.CustomMap;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
-using CustomComponent.SearchNearBy.Services;
-using System.Linq;
 using System.IO;
 using Acr.UserDialogs;
-using System.Threading.Tasks;
-using Splat;
 using TK.CustomMap.Overlays;
 using CustomComponent.SearchNearBy.Pages;
 using Rg.Plugins.Popup.Extensions;
-using CustomComponent.TKCustomMAP.CustomPins;
-using TK.CustomMap.Api.Google;
 
 namespace CustomComponent.SearchNearBy.ViewModels
 {
+    /// <summary>
+    /// Dash board view model class.
+    /// </summary>
     public class DashBoardViewModel : DashboardModel
     {
         MapSpan _mapRegion = MapSpan.FromCenterAndRadius(new Position(17.4354, 78.3827), Distance.FromKilometers(2));
@@ -63,13 +60,18 @@ namespace CustomComponent.SearchNearBy.ViewModels
             }
         }
 
+        /// <summary>
+        /// Refreshs the list using PullToRefresh.
+        /// </summary>
         public void RefreshList()
         {
             IsBusy = true;
             GetNearByPlaces("Fetching nearby companies...", Constant.NearbyUrl, "companies", "It companies", Constant.APIKey);
             IsBusy = false;
         }
-
+        /// <summary>
+        /// Gets the current GPS location.
+        /// </summary>
         public async void GetCurrentLocation()
         {
             try
@@ -179,7 +181,9 @@ namespace CustomComponent.SearchNearBy.ViewModels
                 }
             }
         }
-
+        /// <summary>
+        /// The isenabled property.
+        /// </summary>
         bool _isenabled = false;
         public bool IsEnabled
         {
@@ -346,6 +350,10 @@ namespace CustomComponent.SearchNearBy.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets the item selected command.
+        /// </summary>
+        /// <value>The item selected command.</value>
         public Command ItemSelectedCommand => new Command((s)=>
         {
             try
@@ -441,6 +449,14 @@ namespace CustomComponent.SearchNearBy.ViewModels
             }
         });
 
+        /// <summary>
+        /// Gets the near by places as per searchkeyword value.
+        /// </summary>
+        /// <param name="busytext">Busytext.</param>
+        /// <param name="nearbyurl">Nearbyurl.</param>
+        /// <param name="type">Type.</param>
+        /// <param name="searchkeyword">Searchkeyword.</param>
+        /// <param name="apikey">Apikey.</param>
         public async void GetNearByPlaces(String busytext, string nearbyurl, string type, string searchkeyword, string apikey)
         {
          try
@@ -504,6 +520,10 @@ namespace CustomComponent.SearchNearBy.ViewModels
             }
         }
 
+        /// <summary>
+        /// Move to ImageLargeView which opens as popUp page.
+        /// </summary>
+        /// <value>The image tapped command.</value>
         public Command ImageTappedCommand
         {
             get

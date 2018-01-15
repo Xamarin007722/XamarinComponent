@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{35DE9D59-6E57-42AB-870E-EC8105353BF5}|Default" GitUserInfo="UsingGIT" NuGet.AddPackagesDialog.IncludePrerelease="True">
+<Properties StartupConfiguration="{35DE9D59-6E57-42AB-870E-EC8105353BF5}|Default" GitUserInfo="UsingGIT" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.Workbench ActiveDocument="XamarinComponent.git Status">
     <Files>
       <File FileName="XamarinComponent.git Status" />

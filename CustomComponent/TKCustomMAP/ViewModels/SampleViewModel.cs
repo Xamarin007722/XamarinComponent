@@ -3,18 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Threading.Tasks;
 using TK.CustomMap.Api;
 using TK.CustomMap.Api.Google;
-using TK.CustomMap.Api.OSM;
-using TK.CustomMap.Interfaces;
 using TK.CustomMap.Overlays;
 using CustomComponent.TKCustomMAP.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using TK.CustomMap;
 using CustomComponent.SearchNearBy.Pages;
-using CustomComponent.TKCustomMAP.CustomPins;
 using CustomComponent.Views;
 
 namespace CustomComponent.TKCustomMAP.ViewModels
@@ -23,6 +19,9 @@ namespace CustomComponent.TKCustomMAP.ViewModels
     {
         TKTileUrlOptions _tileUrlOptions;
 
+        /// <summary>
+        /// The map region.
+        /// </summary>
         MapSpan _mapRegion = MapSpan.FromCenterAndRadius(new Position(17.4474, 78.3762), Distance.FromKilometers(2));
         Position _mapCenter;
         TKCustomMapPin _selectedPin;
@@ -33,30 +32,6 @@ namespace CustomComponent.TKCustomMAP.ViewModels
         ObservableCollection<TKPolyline> _lines;
         ObservableCollection<TKPolygon> _polygons;
        
-
-
-        public Command ShowListCommand
-        {
-            get
-            {
-                return new Command(async () =>
-                {
-                    if (_pins == null || !_pins.Any())
-                    {
-                        Application.Current.MainPage.DisplayAlert("Nothing there!", "No pins to show!", "OK");
-                        return;
-                    }
-                    var listPage = new PinListPage(Pins);
-                    listPage.PinSelected += async (o, e) =>
-                    {
-                        SelectedPin = e.Pin;
-                        await Application.Current.MainPage.Navigation.PopAsync();
-                    };
-                    await Application.Current.MainPage.Navigation.PushAsync(listPage);
-                });
-            }
-        }
-
         /// <summary>
         /// Map region bound to <see cref="TKCustomMap"/>
         /// </summary>
@@ -297,27 +272,7 @@ namespace CustomComponent.TKCustomMAP.ViewModels
                         MapRegion = MapSpan.FromCenterAndRadius(new Position(MapCenter.Latitude, MapCenter.Longitude), Distance.FromKilometers(1));
                         return;
                     }
-                    //var osmResult = p as OsmNominatimResult;
-                    //if (osmResult != null)
-                    //{
-                    //    MapCenter = new Position(osmResult.Latitude, osmResult.Longitude);
-                    //    return;
-                    //}
 
-                    //if (Device.OS == TargetPlatform.Android)
-                    //{
-                    //    var prediction = (TKNativeAndroidPlaceResult)p;
-
-                    //    var details = await TKNativePlacesApi.Instance.GetDetails(prediction.PlaceId);
-
-                    //    MapCenter = details.Coordinate;
-                    //}
-                    //else if (Device.OS == TargetPlatform.iOS)
-                    //{
-                    //    var prediction = (TKNativeiOSPlaceResult)p;
-
-                    //    MapCenter = prediction.Details.Coordinate;
-                    //}
                 });
             }
         }
@@ -359,6 +314,10 @@ namespace CustomComponent.TKCustomMAP.ViewModels
             }
         }
 
+        /// <summary>
+        /// Clears the maps pins,routes etc.
+        /// </summary>
+        /// <value>The clear map command.</value>
         public Command ClearMapCommand
         {
             get
@@ -388,6 +347,10 @@ namespace CustomComponent.TKCustomMAP.ViewModels
                 });
             }
         }
+        /// <summary>
+        /// Go to settings page.
+        /// </summary>
+        /// <value>The setting command.</value>
         public Command SettingCommand
         {
             get
@@ -434,6 +397,10 @@ namespace CustomComponent.TKCustomMAP.ViewModels
             _circles = new ObservableCollection<TKCircle>();
         }
 
+        /// <summary>
+        /// Implementation of PropertyChangedEvent .
+        /// </summary>
+        /// <param name="propertyName">Property name.</param>
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
